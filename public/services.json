@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Geringhoff",
+        "price": "589",
+        "orderQuantity": "1250",
+        "availableQuantity": "5000",
+        "description": " Repair your worn or damaged poly corn head hood quickly and easily.The patch is made of hard, slippery 1/4inch UHMW, suitable for high wear areas.",
+        "img": "https://i.ibb.co/fM8gTdx/corn-head-snout.jpg"
+    },
+    {
+        "name": "GUARD- JD, GEHL MOWERS",
+        "price": "550",
+        "orderQuantity": "1300",
+        "availableQuantity": "5500",
+        "description": "Fits Badger Northland Mowers – 1978 and Later. Gehl Mower Conditioners. Hesston Mower Conditioners. J.I. Case Windrowers. John Deere Mowers. International Harvester Forage Harvesters.",
+        "img": "https://i.ibb.co/6PRQ14K/guard-jd.jpg"
+    },
+    {
+        "name": "Lever, Seperator Drive, Idler",
+        "price": "790",
+        "orderQuantity": "1000",
+        "availableQuantity": "6000",
+        "description": "Lever, Seperator Drive, Idler To Fit International/CaseIH -  NEW (Aftermarket) Cross Reference Numbers, 1347039C1",
+        "img": "https://i.ibb.co/nzKxyxJ/seperator-Drice.jpg"
+    },
+    {
+        "name": "Sheave, Variable Speed To Fit",
+        "price": "850",
+        "orderQuantity": "1400",
+        "availableQuantity": "4500",
+        "description": "A sheave or pulley wheel is a grooved wheel often used for holding a belt, wire rope, or rope and incorporated into a pulley.",
+        "img": "https://i.ibb.co/Vj4N8c6/sheave.jpg"
+    },
+    {
+        "name": "Heavy hammer knives",
+        "price": "450",
+        "orderQuantity": "1500",
+        "availableQuantity": "8500",
+        "description": "Hammer is an agricultural tool that deposits impact on an object. Hammer is used mainly for driving nails, fitting parts, forging metals and breaking apart objects.",
+        "img": "https://i.ibb.co/LpsMhBp/heavy-hammer-knives.png"
+    },
+    {
+        "name": "Sickle blade assembly",
+        "price": "625",
+        "orderQuantity": "800",
+        "availableQuantity": "6800",
+        "description": "Sickle blade assembly GW-34509 moves back and forth in front of the mower to cut thick grass and brush. The assembly may include multiple parts;",
+        "img": "https://i.ibb.co/CH5dJwM/sickle-bar.jpg"
+    }
+]
