@@ -10,7 +10,7 @@ const Product = ({ service }) => {
 
     const nevigateServiceDetail = id => {
         console.log(id)
-        navigate(`/products/${id}`)
+        navigate(`/purchage/${id}`)
     }
     return (
         <div>

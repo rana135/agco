@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "img": "https://i.ibb.co/f8jsqwq/review1.png",
         "review": "Helpful phone call, directed me to website which was easy to use, placed order which arrived in a couple of days.",
         "name": "Devin Walker",
@@ -8,7 +7,6 @@
         "ratings": 5
     },
     {
-        "_id": 2,
         "img": "https://i.ibb.co/VVWk2Vw/review2.png",
         "review": "Good selection of parts at a competitive price. Came in reasonable timeframe and items as described.",
         "name": "Matt Cromwell",
@@ -16,7 +14,6 @@
         "ratings": 5
     },
     {
-        "_id": 3,
         "img": "https://i.ibb.co/cD6dVJN/review3.png",
         "review": "Fast delivery very friendly service highly recommended definitely be buying more from them",
         "name": "Jason Knill",
@@ -24,7 +21,6 @@
         "ratings": 4.5
     },
     {
-        "_id": 4,
         "img": "https://i.ibb.co/mc3zwKx/review4.png",
         "review": "Brilliant company. Easy to use site. Delivery was quick and the item is just as should be Very pleased",
         "name": "Taylor Waldon",
@@ -32,7 +28,6 @@
         "ratings": 5
     },
     {
-        "_id": 5,
         "img": "https://i.ibb.co/F5C8Vwn/review5.png",
         "review": "Excellent service. Goods arrived on time. Would purchase again from Farming Parts.",
         "name": "Maruf Mohanty",
@@ -40,7 +35,6 @@
         "ratings": 4.5
     },
     {
-        "_id": 6,
         "img": "https://i.ibb.co/54xYkxT/review6.png",
         "review": "Lovely products, very good service. I agree with the previous positive comments about their service.",
         "name": "Michelle Ames",

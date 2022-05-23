@@ -10,6 +10,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './pages/Shared/Navbar/Navbar';
 import Footer from './pages/Shared/Footer';
 import ScrollToTop from "react-scroll-to-top";
+import AddReview from './pages/AddReview/AddReview';
+import RequireAuth from './pages/Login/RequireAuth';
+import Purchage from './pages/Purchage/Purchage';
 
 
 
@@ -22,6 +25,16 @@ function App() {
         <Route path="/banner" element={<Banner />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path='/purchage/:productsId' element={
+          <RequireAuth>
+            <Purchage></Purchage>
+          </RequireAuth>}>
+        </Route>
+        <Route path='/addReview' element={
+          <RequireAuth>
+            <AddReview></AddReview>
+          </RequireAuth>}>
+        </Route>
 
 
         <Route path="*" element={<NotFound />} />

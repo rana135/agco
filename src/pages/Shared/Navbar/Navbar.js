@@ -15,7 +15,7 @@ const Navbar = () => {
     const menuItems = <>
         <li className='ml-80'><Link to='/'>HOME</Link></li>
         <li><Link to='/about'>ABOUT</Link></li>
-        <li><Link to='/login'>LOGIN</Link></li>
+        <li><Link to='/addReview'>ADD REVIEW</Link></li>
         <li>{user ? <button onClick={logout} className="btn btn-secondary">signout</button> : <Link to='/login'>LOGIN</Link>}</li>
     </>
     return (

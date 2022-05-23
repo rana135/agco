@@ -1,0 +1,59 @@
+.purchage-container img {
+    height: 100%;
+    width: 100%;
+
+}
+
+.zoom-description {
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+    align-items: center;
+}
+
+.zoom-img {
+    width: 100%;
+}
+
+.purchage-container {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    text-align: center;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.purchage-container p {
+    margin: 0px;
+}
+
+.purchage-container h4 {
+    margin: 0px;
+}
+.update-btn{
+    background-color: #CAD5E2;
+    color: black;
+    padding: 10px 19px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;
+}
+/* --------------------------------------------
+        Responsive for mobile device
+-------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+    .zoom-description h4 {
+        font-size: small;
+        margin: 0%;
+    }
+
+    .zoom-description p {
+        font-size: xx-small;
+        margin: 0%;
+    }
+
+    .zoom-description {
+        margin: 0%;
+    }
+}

@@ -17,7 +17,7 @@ const Review = ({ review }) => {
                             <h2 className='text-xl font-bold'>{review.name}</h2>
                             <div className='flex'>
                                 <p>{review.location}</p>
-                                <p className='ml-1'>⭐⭐⭐⭐⭐</p>
+                                <p style={{marginLeft:"10px"}} className='font-bold'>Ratings:{review.ratings}</p>
                             </div>
                         </div>
                     </div>

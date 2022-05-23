@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import quote from '../../assets/images/quote.svg';
-import people1 from '../../assets/reviews/review1.png'
-import people2 from '../../assets/reviews/review2.png'
-import people3 from '../../assets/reviews/review3.png'
-import people4 from '../../assets/reviews/review4.png'
-import people5 from '../../assets/reviews/review5.png'
-import people6 from '../../assets/reviews/review6.png'
 import Review from './Review';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(()=>{
-        fetch("reviews.json")
+        fetch("http://localhost:5000/reviews")
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])
