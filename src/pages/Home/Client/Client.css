@@ -1,0 +1,22 @@
+.client{
+    max-width: 55%;
+    margin-left: 5px;
+}
+.client img{
+    width: 100%;
+}
+
+.slick-arrow {
+    background-color: rgb(31, 9, 227);
+    border-radius: 50%;
+}
+
+.slick-prev {
+    z-index: 1;
+    left: 20px !important;
+}
+
+.slick-next {
+    z-index: 1;
+    right: 20px !important;
+}

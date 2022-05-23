@@ -1,0 +1,72 @@
+.services {
+    display: flex;
+    align-items: center;
+    margin-left: 40%;
+    margin-top: 1rem;
+  
+    
+  }
+  
+  .services-title {
+    color: #3065b5;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  
+  .products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0rem;
+    grid-row-gap: 1.5rem;
+    /* margin: 2rem 1rem; */
+  
+  }
+  .mng-link-container{
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .mng-link{
+    border: none;
+    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
+    background-color: #063970;
+    color: white;
+  }
+  
+  /* -----------------------------------
+   Services Responsive for mobile device 
+   ------------------------------------*/
+   @media only screen and (max-width: 576px) {
+    .products-container{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  
+    }
+  }
+  
+  /*-----------------------------------
+   Services Responsive for tab device 
+   ------------------------------------*/
+  
+  @media only screen and (min-width: 576px) and (max-width: 966px) {
+    .products-container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  
+    }
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .products-container{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+    }
+    .services {
+      display: flex;
+      align-items: center;
+      margin-left: 20%;
+      margin-top: 10px;
+    }
+  }

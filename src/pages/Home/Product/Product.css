@@ -1,0 +1,34 @@
+.product-container img {
+    height: 100%;
+    width: 100%;
+}
+
+.product-container {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: auto;
+    width: 250px;
+}
+
+.admit-btn {
+    width: 100%;
+    color: rgb(235, 228, 228);
+    background-color: #3065b5;
+    font-weight: 900;
+    
+}
+
+@media only screen and (max-width: 576px) {
+    .product-container img {
+        width: 90%;
+
+    }
+    .product-container h2  {
+        font-size: large;
+    }
+    .product-container h4 {
+        font-size: small;
+    }
+    .product-container p {
+        font-size: x-small;
+    }
+}
