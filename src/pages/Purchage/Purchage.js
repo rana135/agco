@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import ReactImageMagnify from 'react-image-magnify';
 import { Flip } from 'react-reveal';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import usePurchage from '../../hook/usePurchage';
 import './Purchage.css'
 
@@ -14,10 +15,10 @@ const Purchage = () => {
 
     const onSubmit = (data) => {
         console.log(data)
-        const availableQuantity = parseFloat(data?.availableQuantity) + parseFloat(product?.availableQuantity);
-        const QuantityDecrese = parseFloat(product?.availableQuantity) - parseFloat(data?.availableQuantity);
-        console.log(availableQuantity)
-        const update = { availableQuantity ,QuantityDecrese }
+        const orderQuantity = parseFloat(data?.orderQuantity) + parseFloat(product?.orderQuantity);
+        const QuantityDecrese = parseFloat(product?.orderQuantity) - parseFloat(data?.orderQuantity);
+        console.log(orderQuantity)
+        const update = { orderQuantity ,QuantityDecrese }
         const url = `
         http://localhost:5000/products/${productsId}`
         fetch(url, {
@@ -31,9 +32,9 @@ const Purchage = () => {
             .then(result => {
                 console.log(result)
                 reset()
-            }
-            )
+            })
     }
+
 
     return (
         <div>
@@ -67,7 +68,7 @@ const Purchage = () => {
                     <div className='flex w-52 mx-auto mt-3'>
                         <form onSubmit={handleSubmit(onSubmit)}>
 
-                            <input className='mb-3 mr-2 h-12 w-60 rounded-md text-center' placeholder='Update Quantity' type="number" {...register("Quantity")} /> <br/>
+                            <input className='mb-3 mr-2 h-12 w-60 rounded-md text-center' placeholder='Update Quantity' type="number" {...register("orderQuantity")} /> <br/>
                             <input className='update-btn font-bold text-xl' type="submit" value="Update" />
                         </form>
                     </div>

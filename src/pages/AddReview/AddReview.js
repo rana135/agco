@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import './AddReview.css';
 
@@ -8,6 +9,7 @@ import './AddReview.css';
 
 const AddReview = () => {
     const [user, loading, error] = useAuthState(auth);
+    console.log(user);
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data, event) => {
@@ -22,8 +24,10 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
                 reset()
+                if(result){
+                    toast("Your comment has been successful.")
+                }
             })
     };
 
@@ -36,7 +40,7 @@ const AddReview = () => {
                     <input  className='mb-2 text-center rounded-md h-12 lg:w-96' value={user.displayName} {...register("name", { required: true, maxLength: 20 })} /> <br />
                     <input className='mb-2  rounded-md h-12 lg:w-96 text-center' placeholder='Enter Your ratings' type="number" {...register("ratings")} /><br />
                     <input className='mb-2  rounded-md h-12 lg:w-96 text-center' placeholder='Enter Your location' type="text" {...register("location")} /><br />
-                    <input className='mb-2  rounded-md h-12 lg:w-96 text-center' placeholder='image URL' type="text" {...register("img")} /><br />
+                    <input value={user.photoURL} className='mb-2  rounded-md h-12 lg:w-96 text-center' placeholder='image URL' type="text" {...register("img")} /><br />
                     <textarea className='mb-2  rounded-md h-36 lg:w-96 text-center bg-slate-200' placeholder='Enter Your Comment'  {...register("review")} /><br />
 
                     <input className='mb-2 rounded-md h-12 bg-primary lg:w-96 text-white font-bold text-xl' placeholder='Enter Your' type="submit" value="Add Comment" />

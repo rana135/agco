@@ -13,6 +13,7 @@ import ScrollToTop from "react-scroll-to-top";
 import AddReview from './pages/AddReview/AddReview';
 import RequireAuth from './pages/Login/RequireAuth';
 import Purchage from './pages/Purchage/Purchage';
+import Blogs from './pages/Blogs/Blogs';
 
 
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/banner" element={<Banner />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='/purchage/:productsId' element={
