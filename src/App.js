@@ -18,6 +18,7 @@ import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import MyReview from './pages/Dashboard/MyReview/MyReview';
 import MyOrders from './pages/Dashboard/MyOrders/MyOrders';
 import MyProfile from './pages/Dashboard/MyProfile/MyProfile';
+import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/banner" element={<Banner />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/myPortfolio" element={<MyPortfolio />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='/purchage/:productsId' element={

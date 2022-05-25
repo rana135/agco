@@ -4,11 +4,11 @@ import Review from './Review';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
-    useEffect(()=>{
-        fetch("http://localhost:5000/reviews")
-        .then(res => res.json())
-        .then(data => setReviews(data))
-    },[])
+    useEffect(() => {
+        fetch("https://still-retreat-27608.herokuapp.com/reviews")
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [])
     return (
         <section className='mt-24 m-3'>
             <div className='flex justify-between'>

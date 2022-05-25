@@ -31,7 +31,7 @@ const Purchage = () => {
         console.log(orderQuantity)
         const update = { orderQuantity, QuantityDecrese }
         const url = `
-        http://localhost:5000/products/${productsId}`
+        https://still-retreat-27608.herokuapp.com/products/${productsId}`
         fetch(url, {
             method: "PUT",
             headers: {
@@ -46,7 +46,7 @@ const Purchage = () => {
             })
 
         //  Post Method
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://still-retreat-27608.herokuapp.com/orders', data)
             .then(response => {
                 const data = response.data
                 console.log(data)

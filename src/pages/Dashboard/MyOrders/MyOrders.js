@@ -9,7 +9,7 @@ const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
     useEffect(() => {
         if (user) {
-            const url=`http://localhost:5000/orders?email=${user.email}`
+            const url = `https://still-retreat-27608.herokuapp.com/orders?email=${user.email}`
             console.log(url)
             fetch(url)
                 .then(res => res.json())
@@ -21,7 +21,7 @@ const MyOrders = () => {
         return <Loading></Loading>
     }
 
-  
+
 
     return (
         <div>
@@ -41,8 +41,8 @@ const MyOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {products.map((product,index) => <tr>
-                            <th>{index+1}</th>
+                        {products.map((product, index) => <tr>
+                            <th>{index + 1}</th>
                             <th>{product.name}</th>
                             <td>{product.productName}</td>
                             <td>{product.orderQuantity}</td>

@@ -14,7 +14,7 @@ const AddReview = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = (data, event) => {
         console.log(data)
-        const url = `http://localhost:5000/reviews`
+        const url = `https://still-retreat-27608.herokuapp.com/reviews`
         fetch(url, {
             method: "POST",
             headers: {
@@ -45,7 +45,7 @@ const AddReview = () => {
 
                     <input value={user.photoURL} className='mb-2  rounded-md h-12 lg:w-96 text-center' placeholder='image URL' type="text" {...register("img")} /><br />
 
-                    <textarea className='mb-2  rounded-md h-36 lg:w-96 text-center bg-slate-200' placeholder='Enter Your Comment'  {...register("review")} required/><br />
+                    <textarea className='mb-2  rounded-md h-36 lg:w-96 text-center bg-slate-200' placeholder='Enter Your Comment'  {...register("review")} required /><br />
 
                     <input className='mb-2 rounded-md h-12 bg-primary lg:w-96 text-white font-bold text-xl' placeholder='Enter Your' type="submit" value="Add Comment" />
                 </form>
