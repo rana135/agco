@@ -33,7 +33,7 @@ const Footer = () => {
             <footer className="footer px-10 py-4 border-t bg-gradient-to-r from-secondary to-primary text-white">
                 <div className="items-center grid-flow-col">
                     <h1 className='font-bold text-3xl'>#</h1>
-                <p>AGCO<br />
+                <p>AGCO INDUSTRIES LIMITED<br />
                     Copyright © {currentYear} - All right reserved by AGCO</p>
                 </div>
                 <div className="md:place-self-center md:justify-self-end mr-14">

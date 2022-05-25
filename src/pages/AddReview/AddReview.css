@@ -1,5 +1,9 @@
-.addreview{
+.addreview {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.addreviewContainer {
+    background-color: whitesmoke;
 }

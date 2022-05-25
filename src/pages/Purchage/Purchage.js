@@ -1,24 +1,35 @@
+import axios from 'axios';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import ReactImageMagnify from 'react-image-magnify';
 import { Flip } from 'react-reveal';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 import usePurchage from '../../hook/usePurchage';
 import './Purchage.css'
 
 const Purchage = () => {
+    // const { productsId } = useParams()
+    // const { register, reset, handleSubmit } = useForm();
+    // const [product, setProduct] = usePurchage(productsId)
+    // console.log(product);
+
     const { productsId } = useParams()
-    const { register, reset, handleSubmit } = useForm();
-    const [product, setProduct] = usePurchage(productsId)
-    console.log(product);
+    const { register, reset, handleSubmit, formState: { errors }, } = useForm();
+    const [user] = useAuthState(auth);
+    const [product] = usePurchage(productsId)
+
+    var AvlOQ = product.Quantity
+    var MinOQ = product.orderQuantity
 
     const onSubmit = (data) => {
         console.log(data)
         const orderQuantity = parseFloat(data?.orderQuantity) + parseFloat(product?.orderQuantity);
         const QuantityDecrese = parseFloat(product?.orderQuantity) - parseFloat(data?.orderQuantity);
         console.log(orderQuantity)
-        const update = { orderQuantity ,QuantityDecrese }
+        const update = { orderQuantity, QuantityDecrese }
         const url = `
         http://localhost:5000/products/${productsId}`
         fetch(url, {
@@ -32,6 +43,17 @@ const Purchage = () => {
             .then(result => {
                 console.log(result)
                 reset()
+            })
+
+        //  Post Method
+        axios.post('http://localhost:5000/orders', data)
+            .then(response => {
+                const data = response.data
+                console.log(data)
+                if (data.insertedId) {
+                    toast('Your order is booked')
+                    reset()
+                }
             })
     }
 
@@ -68,12 +90,75 @@ const Purchage = () => {
                     <div className='flex w-52 mx-auto mt-3'>
                         <form onSubmit={handleSubmit(onSubmit)}>
 
-                            <input className='mb-3 mr-2 h-12 w-60 rounded-md text-center' placeholder='Update Quantity' type="number" {...register("orderQuantity")} /> <br/>
+                            <input className='mb-3 mr-2 h-12 w-60 rounded-md text-center' placeholder='Update Quantity' type="number" {...register("orderQuantity")} /> <br />
                             <input className='update-btn font-bold text-xl' type="submit" value="Update" />
                         </form>
                     </div>
                 </div>
             </div>
+
+            <form className='lg:ml-80' onSubmit={handleSubmit(onSubmit)}>
+                <input
+                    className='mb-2 text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
+                    value={product.name}
+                    {...register("productName")}
+                /><br />
+
+                <input
+                    className='mb-2 text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
+                    value={user.displayName}
+                    {...register("name", { required: true, maxLength: 40 })}
+                /><br />
+
+                <input
+                    className='mb-2 text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
+                    value={user.email}
+                    {...register("email")}
+                /><br />
+
+                <input
+                    className='mb-2 input input-bordered input-primary w-full max-w-xs ' placeholder='Enter Your Address'
+                    type="text" {...register("address", {
+                        required: {
+                            value: true,
+                            message: "Address is Required"
+                        }
+                    })}
+                /><br />
+                <label className="label">
+                    {errors.address?.type === 'required' && <span className="label-text text-red-500">{errors.address.message}</span>}
+                </label>
+
+                <input
+                    className='input input-bordered input-primary w-full max-w-xs ' placeholder='Enter Phone Number'
+                    type="number" {...register("number",
+                        {
+                            maxLength: 15, required: {
+                                value: true,
+                                message: "Number is required"
+                            },
+                        })}
+                /><br />
+                <label className="label">
+                    {errors.number?.type === 'required' && <span className="label-text-alt text-red-500">{errors.number.message}</span>}
+                </label>
+                <br />
+
+                <input
+                    className='mb-2 input input-bordered input-primary w-full max-w-xs ' placeholder='Update Quantity (+ , -)'
+                    type="number" {...register("orderQuantity", { min: MinOQ, max: AvlOQ })}
+                /> <br />
+                {errors.number && (
+                    <p className='text-red-500'>You Must be order then orderQuantity and younger then Available Quantity</p>
+                )}
+
+                <input
+                    className=' bg-slate-500 font-bold text-white text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
+                    type="submit"
+                    value="Order"
+                />
+
+            </form>
         </div>
     );
 };
