@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import signUp from '../../assets/images/signUp.png'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
+import useToken from '../../hook/useToken';
+import { toast } from 'react-toastify';
 
 
 const SignUp = () => {
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     let navigate = useNavigate();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
@@ -18,7 +22,15 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(user)
 
+
+    useEffect(() => {
+        if (user || gUser) {
+            navigate(from, { replace: true });
+            toast.success('SignUp sucessfully')
+        }
+    }, [token, from, navigate])
 
     const onSubmit = async data => {
         console.log(data)
@@ -35,9 +47,7 @@ const SignUp = () => {
     if (loading || gLoading || updating) {
         return <Loading></Loading>;
     }
-    if (user || gUser) {
-        navigate('/')
-    }
+
     return (
         <div className='grid lg:grid-cols-2 grid-cols-1 justify-center'>
             <div>

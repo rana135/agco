@@ -19,6 +19,10 @@ import MyReview from './pages/Dashboard/MyReview/MyReview';
 import MyOrders from './pages/Dashboard/MyOrders/MyOrders';
 import MyProfile from './pages/Dashboard/MyProfile/MyProfile';
 import MyPortfolio from './pages/MyPortfolio/MyPortfolio';
+import AllUsers from './pages/Dashboard/AllUsers/AllUsers';
+import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
+import RequireAdmin from './pages/Other/RequireAdmin/RequireAdmin';
+import AddProducts from './pages/Dashboard/AddProducts/AddProducts';
 
 
 
@@ -47,9 +51,13 @@ function App() {
           <RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>}>
-
-          <Route path='myReview' element={<MyReview></MyReview>}></Route>
           <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path='myReview' element={<MyReview></MyReview>}></Route>
+          <Route path='users' element={<AllUsers></AllUsers>}></Route>
+          <Route path='addProducts' element={<RequireAdmin><AddProducts></AddProducts></RequireAdmin>}></Route>
+          <Route path='manageProducts' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
+
         </Route>
 
         <Route path="*" element={<NotFound />} />

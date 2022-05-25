@@ -20,19 +20,37 @@ const MyOrders = () => {
     if (loading) {
         return <Loading></Loading>
     }
+    const handleDelete = id => {
+        console.log(id)
+        const proceed = window.confirm('Are you sure ?')
+
+        if (proceed) {
+            const url = `https://still-retreat-27608.herokuapp.com/orders/${id}`
+            console.log(url)
+            fetch(url, {
+                method: "DELETE",
+                body: JSON.stringify({ id })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    const remaining = products.filter(p => p._id !== id)
+                    setProducts(remaining)
+                })
+        }
+    }
 
 
 
     return (
         <div>
-            <h1 className='text-primary font-bold text-center text-2xl'>Total Order: {products.length}</h1>
+            <h3 className='text-primary text-center text-xl font-bold'>Total Orders : {products.length}</h3>
             <div class="overflow-x-auto">
                 <table class="table table-zebra w-full">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>SL</th>
                             <th>Name</th>
-                            <th>Product</th>
                             <th>MOQ</th>
                             <th>Address</th>
                             <th>Number</th>
@@ -44,11 +62,10 @@ const MyOrders = () => {
                         {products.map((product, index) => <tr>
                             <th>{index + 1}</th>
                             <th>{product.name}</th>
-                            <td>{product.productName}</td>
                             <td>{product.orderQuantity}</td>
                             <td>{product.address}</td>
                             <td>{product.number}</td>
-                            <td > ❌ </td>
+                            <td onClick={() => handleDelete(product._id)}> ❌ </td>
                             <td>💳</td>
                         </tr>)}
                     </tbody>
