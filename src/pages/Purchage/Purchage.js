@@ -20,25 +20,25 @@ const Purchage = () => {
     var MinOQ = product.orderQuantity
 
     const onSubmit = (data) => {
-        console.log(data)
-        const orderQuantity = parseFloat(data?.orderQuantity) + parseFloat(product?.orderQuantity);
-        const QuantityDecrese = parseFloat(product?.orderQuantity) - parseFloat(data?.orderQuantity);
-        console.log(orderQuantity)
-        const update = { orderQuantity, QuantityDecrese }
-        const url = `
-        https://still-retreat-27608.herokuapp.com/products/${productsId}`
-        fetch(url, {
-            method: "PUT",
-            headers: {
-                'content-type': "application/json"
-            },
-            body: JSON.stringify(update)
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result)
-                reset()
-            })
+        // console.log(data)
+        // const orderQuantity = parseFloat(data?.orderQuantity) + parseFloat(product?.orderQuantity);
+        // const QuantityDecrese = parseFloat(product?.orderQuantity) - parseFloat(data?.orderQuantity);
+        // console.log(orderQuantity)
+        // const update = { orderQuantity, QuantityDecrese }
+        // const url = `
+        // https://still-retreat-27608.herokuapp.com/products/${productsId}`
+        // fetch(url, {
+        //     method: "PUT",
+        //     headers: {
+        //         'content-type': "application/json"
+        //     },
+        //     body: JSON.stringify(update)
+        // })
+        //     .then(res => res.json())
+        //     .then(result => {
+        //         console.log(result)
+        //         reset()
+        //     })
 
         //  Post Method
         axios.post('https://still-retreat-27608.herokuapp.com/orders', data)
