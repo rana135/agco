@@ -21,7 +21,7 @@ const Purchage = () => {
     const [user] = useAuthState(auth);
     const [product] = usePurchage(productsId)
 
-    var AvlOQ = product.Quantity
+    var AvlOQ = product.availableQuantity
     var MinOQ = product.orderQuantity
 
     const onSubmit = (data) => {
@@ -86,14 +86,6 @@ const Purchage = () => {
                     <h5><span className='font-bold'>Available Quantity : </span>{product.availableQuantity}</h5>
                     <h5><span className='font-bold'>Order Quantity: </span>{product.orderQuantity} <span className='text-xs'>/Minimum order quantity</span></h5>
                     <Flip right cascade><p> {product.description}</p></Flip>
-
-                    <div className='flex w-52 mx-auto mt-3'>
-                        <form onSubmit={handleSubmit(onSubmit)}>
-
-                            <input className='mb-3 mr-2 h-12 w-60 rounded-md text-center' placeholder='Update Quantity' type="number" {...register("orderQuantity")} /> <br />
-                            <input className='update-btn font-bold text-xl' type="submit" value="Update" />
-                        </form>
-                    </div>
                 </div>
             </div>
 
@@ -145,9 +137,11 @@ const Purchage = () => {
                 <br />
 
                 <input
-                    className='mb-2 input input-bordered input-primary w-full max-w-xs ' placeholder='Update Quantity (+ , -)'
+                    className='mb-2 input input-bordered input-primary w-full max-w-xs '
+                    value={product.orderQuantity}
                     type="number" {...register("orderQuantity", { min: MinOQ, max: AvlOQ })}
                 /> <br />
+
                 {errors.number && (
                     <p className='text-red-500'>You Must be order then orderQuantity and younger then Available Quantity</p>
                 )}

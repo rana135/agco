@@ -7,13 +7,13 @@ import MyProjects from './MyProjects/MyProjects';
 
 const MyPortfolio = () => {
     return (
-        <div>
-            <div class="avatar online lg:mx-96 mx-20 mt-8">
-                <div class="w-52 rounded-full text-center">
+        <div className='flex flex-col w-full'>
+            <div class="avatar grid flex-grow rounded-box place-items-center mt-8">
+                <div class="w-52 rounded-full">
                     <img src={myPic} alt='' />
                 </div>
             </div>
-            <div className='lg:flex'>
+            <div className='lg:flex flex-grow rounded-box place-items-center'>
                 <div class="mockup-phone mt-12">
                     <div class="camera"></div>
                     <div class="display">
@@ -35,7 +35,7 @@ const MyPortfolio = () => {
                         </div>
                     </div>
                 </div>
-                <div className='lg:w-96 mr-20 mt-56'>
+                <div className='lg:w-96 mr-20'>
                     <h1 className='text-primary text-center font-bold text-4xl'>Md Rana Hossain</h1>
                     <h1 className='text-center text-xl'><span className='font-bold'>Email:-</span>rana286090@gmail.com</h1>
                     <h1 className='text-center text-xl mt-2'><span className='font-bold'>Educational Background:-<br /></span>

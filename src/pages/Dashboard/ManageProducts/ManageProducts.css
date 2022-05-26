@@ -1,4 +1,4 @@
-.products {
+.productsContainers{
     display: flex;
     align-items: center;
     margin-left: 40%;
@@ -7,7 +7,7 @@
     
   }
   
-  .products img {
+  .productsContainers img {
     padding-left: 15px;
   }
   
@@ -60,7 +60,7 @@
       grid-template-columns: repeat(2, 1fr);
       width: 100%;
     }
-    .products {
+    .productsContainers {
       display: flex;
       align-items: center;
       margin-left: 20%;

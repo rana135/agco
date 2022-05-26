@@ -25,7 +25,7 @@ const ManageProducts = () => {
 
     return (
         <div>
-            <div className='products'>
+            <div className='productsContainers'>
                 <h1>
                     <Typed className='products-title'
                         strings={[
