@@ -42,9 +42,7 @@ const ManageProducts = () => {
             <div className='MngProducts-container'>
                 {
                     product.map(p => <div>
-                        <div className='MngProducts shadow-sm p-2 text-center rounded-3' data-aos="fade-down"
-                            data-aos-easing="linear"
-                            data-aos-duration="1500">
+                        <div className='MngProducts shadow-sm p-2 text-center rounded-3 border-2'>
 
                             <img src={p.img} alt="" />
                             <h2>Name : {p.name}</h2>

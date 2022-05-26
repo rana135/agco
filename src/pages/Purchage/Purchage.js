@@ -11,11 +11,6 @@ import usePurchage from '../../hook/usePurchage';
 import './Purchage.css'
 
 const Purchage = () => {
-    // const { productsId } = useParams()
-    // const { register, reset, handleSubmit } = useForm();
-    // const [product, setProduct] = usePurchage(productsId)
-    // console.log(product);
-
     const { productsId } = useParams()
     const { register, reset, handleSubmit, formState: { errors }, } = useForm();
     const [user] = useAuthState(auth);
@@ -136,14 +131,16 @@ const Purchage = () => {
                 </label>
                 <br />
 
-                <input
+                <input defaultValue={product.orderQuantity}
                     className='mb-2 input input-bordered input-primary w-full max-w-xs '
-                    value={product.orderQuantity}
                     type="number" {...register("orderQuantity", { min: MinOQ, max: AvlOQ })}
                 /> <br />
 
-                {errors.number && (
-                    <p className='text-red-500'>You Must be order then orderQuantity and younger then Available Quantity</p>
+                {errors.orderQuantity && (
+                    <p className='text-red-500'>
+                        minimum quantity
+                        Will not be less than and will <br/>not be more than the available quantity.
+                    </p>
                 )}
 
                 <input

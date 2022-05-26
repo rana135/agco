@@ -3,15 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
 import UserRow from './UserRow';
-// import { useQuery, QueryClient, QueryClientProvider, } from 'react-query';
 
 const AllUsers = () => {
-    // const { data: users ,isLoading} = useQuery( 'users',() => fetch('https://still-retreat-27608.herokuapp.com/user')
-    // .then(res => res.json()))
-    // if(isLoading){
-    //     return <Loading></Loading>
-    // }
-
     const [users, setUsers] = useState([])
     const [user, loading] = useAuthState(auth);
     useEffect(() => {

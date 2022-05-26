@@ -66,11 +66,10 @@ const MyProfile = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input
+                        <input value={user.email}
                             type="email"
                             placeholder="Enter your e-mail"
                             className="input input-bordered input-primary w-full max-w-xs"
-                            // {...register("firstName", { required: true })}
                             {...register("email", {
                                 pattern: {
                                     value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
@@ -83,7 +82,6 @@ const MyProfile = () => {
 
                         </label>
                     </div>
-
                     <div>
                         <label className="label">
                             <span className="label-text lg:ml-20">Location</span>
@@ -98,7 +96,17 @@ const MyProfile = () => {
 
                     <div>
                         <label className="label">
-                            <span className="label-text lg:ml-20">LinkedIn profile link</span>
+                            <span className="label-text lg:ml-20">Education</span>
+                        </label>
+                        <input
+                            className='mb-3  input input-bordered input-primary max-w-x  lg:w-72 lg:ml-20'
+                            placeholder='Education'
+                            type="text"{...register("Education")}
+                        /><br />
+                    </div>
+                    <div>
+                        <label className="label">
+                            <span className="label-text lg:ml-20">LinkedIn Link Here</span>
                         </label>
                         <input
                             className='mb-3  input input-bordered input-primary max-w-x  lg:w-72 lg:ml-20'
@@ -125,12 +133,12 @@ const MyProfile = () => {
                             })}
                         />
                         <label className="label">
-                            {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                            {errors.phone?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>}
 
                         </label>
                     </div>
 
-                    <input type="submit" className='form-button lg:ml-20 form-button ml-3' value="Save Change" />
+                    <input type="submit" className='form-button lg:ml-36 form-button ml-3' value="Save Change" />
                 </form>
                 </div>
             </div>

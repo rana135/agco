@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.8.1",
+    "@mui/styled-engine-sc": "^5.8.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
@@ -26,6 +31,7 @@
     "react-toastify": "^9.0.1",
     "react-typed": "^1.2.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5",
     "swiper": "^8.1.5",
     "tw-elements": "^1.0.0-alpha12",
     "web-vitals": "^2.1.4"

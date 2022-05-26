@@ -14,7 +14,7 @@ const MyPortfolio = () => {
                 </div>
             </div>
             <div className='lg:flex flex-grow rounded-box place-items-center'>
-                <div class="mockup-phone mt-12">
+                <div class="mockup-phone mt-12 bg-primary">
                     <div class="camera"></div>
                     <div class="display">
                         <div class="artboard artboard-demo phone-1">
@@ -62,6 +62,7 @@ const MyPortfolio = () => {
                 </div>
             </div>
             <MyProjects></MyProjects>
+
         </div>
     );
 };

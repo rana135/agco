@@ -14,7 +14,7 @@ const Products = () => {
                     <h1>
                         <Typed className='services-title'
                             strings={[
-                                'Our Inventory'
+                                'Our Agriculture Parts'
                             ]}
                             typeSpeed={40}
                             backSpeed={55}

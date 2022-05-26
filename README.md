@@ -1,6 +1,6 @@
-# Project Name:- AGCO Manufacture Company.
-## [Firebase Live Site Hosting link]().
-## [Server Site Code link]().
+# Project Name:- AGCO Manufacture LTD.
+## [Firebase Live Site Hosting link](https://agco-198f0.web.app/).
+## [Server Site Code link](https://still-retreat-27608.herokuapp.com/).
 
 ## Project Description:-
 * This is basically a Manufacture website,

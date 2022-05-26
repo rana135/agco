@@ -30,7 +30,7 @@ const AddProducts = () => {
 
     return (
         <div>
-            <h1 className='comment-title'>Please Add  Products</h1>
+            <h1 className='comment-title text-center font-bold text-primary text-2xl mt-2'>Please Add  Products</h1>
             <div className='addreview'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input
