@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import './MyProfile.css'
 
 
 const MyProfile = () => {
@@ -33,7 +34,7 @@ const MyProfile = () => {
         <div>
             <div class="flex flex-col w-full lg:flex-row">
                 <div class="grid flex-grow card bg-base-300 rounded-box place-items-center">
-                    <img className=' rounded-full' src={user?.photoURL} alt="" />
+                    <img className='h-48 rounded-full' src={user?.photoURL} alt="" />
                 </div>
                 <div class="divider divider-horizontal">OR</div>
                 <div class="grid flex-grow card rounded-box place-items-center"><form onSubmit={handleSubmit(onSubmit)} >
@@ -68,7 +69,7 @@ const MyProfile = () => {
                         <input
                             type="email"
                             placeholder="Enter your e-mail"
-                            className="input input-bordered input-primary w-full max-w-xs "
+                            className="input input-bordered input-primary w-full max-w-xs"
                             // {...register("firstName", { required: true })}
                             {...register("email", {
                                 pattern: {
@@ -85,22 +86,22 @@ const MyProfile = () => {
 
                     <div>
                         <label className="label">
-                            <span className="label-text">Location</span>
+                            <span className="label-text lg:ml-20">Location</span>
                         </label>
                         <input
                             type="text"
                             placeholder="Enter your Location"
-                            className="input input-bordered input-primary w-full max-w-xs "
+                            className="input input-bordered input-primary max-w-xs lg:w-72 lg:ml-20"
                             {...register("location")}
                         />
                     </div>
 
                     <div>
                         <label className="label">
-                            <span className="label-text">LinkedIn profile link</span>
+                            <span className="label-text lg:ml-20">LinkedIn profile link</span>
                         </label>
                         <input
-                            className='mb-3  input input-bordered input-primary w-full max-w-x'
+                            className='mb-3  input input-bordered input-primary max-w-x  lg:w-72 lg:ml-20'
                             placeholder='LinkedIn Profile Link'
                             type="text"{...register("LinkedIn")}
                         /><br />
@@ -112,7 +113,7 @@ const MyProfile = () => {
                         </label>
                         <input
                             type="phone"
-                            placeholder="Enter your password"
+                            placeholder="Enter your phone"
                             className="input input-bordered input-primary w-full max-w-xs"
                             // {...register("firstName", { required: true })}
                             {...register("phone", {
@@ -129,7 +130,7 @@ const MyProfile = () => {
                         </label>
                     </div>
 
-                    <input type="submit" className='lg:ml-20 form-button ml-3' value="Save Change" />
+                    <input type="submit" className='form-button lg:ml-20 form-button ml-3' value="Save Change" />
                 </form>
                 </div>
             </div>
