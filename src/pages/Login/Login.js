@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import login from '../../assets/images/reset.png'
+import login from '../../assets/images/login.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
@@ -116,7 +116,7 @@ const Login = () => {
                             {signInError}
                             <input type="submit" value='Login' className="btn bg-gradient-to-r from-secondary to-primary text-white font-bold w-full max-w-xs" />
                         </form>
-                        <p><small>New to Denta Care? <Link className='text-primary link-hover' to="/signup">Create New Account</Link></small></p>
+                        <p><small>New to AGCO? <Link className='text-primary link-hover' to="/signup">Create New Account</Link></small></p>
 
                         <p><small>Forget Password? <span 
                         onClick={resetPassword}

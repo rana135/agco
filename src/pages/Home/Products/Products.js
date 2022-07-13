@@ -11,7 +11,7 @@ const Products = () => {
         <div>
             <div>
                 <div className='services font-bold text-4xl'>
-                    <h1>
+                    <h1 className='mt-5 mb-5'>
                         <Typed className='services-title'
                             strings={[
                                 'Our Agriculture Parts'
@@ -25,7 +25,7 @@ const Products = () => {
                     </h1>
                 </div>
 
-                <div className='products-container lg:ml-24'>
+                <div className='products-container mt-5 lg:ml-24'>
                     {
                         product.map(service => <Product
                             key={service._id}

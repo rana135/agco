@@ -7,6 +7,8 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     height: auto;
     width: 250px;
+    -webkit-box-shadow: 3px 4px 8px 0px #000000;
+    box-shadow: 3px 4px 8px 0px #000000;
 }
 
 .admit-btn {
@@ -14,7 +16,7 @@
     color: rgb(235, 228, 228);
     background-color: #3065b5;
     font-weight: 900;
-    
+
 }
 
 @media only screen and (max-width: 576px) {
@@ -22,12 +24,15 @@
         width: 90%;
 
     }
-    .product-container h2  {
+
+    .product-container h2 {
         font-size: large;
     }
+
     .product-container h4 {
         font-size: small;
     }
+
     .product-container p {
         font-size: x-small;
     }

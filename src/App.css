@@ -1,3 +1,10 @@
+@media only screen and (max-width:600px) {
+  .form-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +39,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

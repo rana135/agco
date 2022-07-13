@@ -5,49 +5,51 @@ our facts
 */
 
 section.our-facts {
-    background-image: url(../../../assets/images/background1.jpg);
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 140px 0px 125px 0px;
-    margin: 5rem 0rem;
-  }
-  
-  section.our-facts  h2{
-    font-size: 38px;
-    color: #fff;
-    line-height: 50px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 50px;
-  }
- 
-  .count-area-content {
-    text-align: center;
-    background-color: rgba(250,250,250,0.15);
-    border-radius: 20px;
-    margin: 15px 0px;
-  }
-  
-  .percentage .count-digit:after {
-    content: '%';
-    margin-left: 3px;
-  }
-  
-  .count-digit {
-      margin: 5px 0px;
-      color: #f5a425;
-      font-weight: 700;
-      font-size: 36px;
-  }
-  .count-title {
-      font-size: 18px;
-      font-weight: 500;
-      color: #fff;
-      letter-spacing: 0.5px;
-  }
-  
-  .new-students {
-    margin-top: 45px;
-  }
+  /* background-image: url(../../../assets/images/background1.jpg); */
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 140px 0px 125px 0px;
+  margin: 2rem 0rem;
+}
+
+section.our-facts h2 {
+  font-size: 38px;
+  color: #3065b5;
+  line-height: 60px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 50px;
+}
+
+.count-area-content {
+  text-align: center;
+  -webkit-box-shadow: 3px 4px 8px 0px #000000;
+  box-shadow: 3px 4px 8px 0px #000000;
+  border-radius: 20px;
+  margin: 15px 0px;
+}
+
+.percentage .count-digit:after {
+  content: '%';
+  margin-left: 3px;
+}
+
+.count-digit {
+  margin: 5px 0px;
+  color: #f5a425;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.count-title {
+  font-size: 27px;
+  font-weight: 500;
+  color: rgb(13, 43, 106);
+  letter-spacing: 0.5px;
+}
+
+.new-students {
+  margin-top: 25px;
+}

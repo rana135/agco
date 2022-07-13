@@ -14,7 +14,7 @@ const Reviews = () => {
             <div className='flex justify-between'>
                 <div className='ml-6'>
                     <h2 className='text-xl text-primary'>Customers Reviews</h2>
-                    <h1 className='text-3xl'>What Our Patience Say's</h1>
+                    <h1 className='text-3xl'>What Our Customers Say's</h1>
                 </div>
                 <div>
                     <img className='w-24 lg:w-18' src={quote} alt="" />

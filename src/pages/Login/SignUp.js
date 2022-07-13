@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
-import signUp from '../../assets/images/signUp.png'
+import signUp from '../../assets/images/Sign up-pana.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import useToken from '../../hook/useToken';

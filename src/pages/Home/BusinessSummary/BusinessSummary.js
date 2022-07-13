@@ -12,12 +12,12 @@ const BusinessSummary = () => {
         <div>
             <section className="our-facts">
                 <div>
-                    <div>
-                        <h2 className='text-center'>A Few Facts About Our Company</h2>
-                        <div className='flex m-14'>
+                    <h2 className='text-center'>A Few Facts About Our Company</h2>
+                    <div className='flex justify-center'>
+                        <div className='lg:mr-14'>
                             <div>
                                 <div>
-                                    <div className="grid lg:grid-cols-4 gap-5">
+                                    <div className="grid lg:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-5">
                                         <div>
                                             <div className="count-area-content percentage">
                                                 <div className="count-digit">
@@ -39,7 +39,7 @@ const BusinessSummary = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="grid lg:grid-cols-4 gap-5">
+                                    <div className="grid lg:grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-5">
                                         <div>
                                             <div className="count-area-content new-students">
                                                 <div className="count-digit"><CountUp end={2178} delay={1} duration={7} /></div>
@@ -56,9 +56,9 @@ const BusinessSummary = () => {
                                 </div>
 
                             </div>
-                            <div>
-                                <img className='w-96 mt-24 hidden lg:block' src={summery} alt="" />
-                            </div>
+                        </div>
+                        <div>
+                            <img className='w-96 mt-8 hidden rounded-3xl h-72 lg:block' src={summery} alt="" />
                         </div>
                     </div>
                 </div>
