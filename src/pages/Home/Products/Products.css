@@ -19,8 +19,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 0rem;
     grid-row-gap: 1.5rem;
-    /* margin: 2rem 1rem; */
-  
+    gap:60px;
   }
   .mng-link-container{
     text-align: center;
@@ -38,10 +37,24 @@
   /* -----------------------------------
    Services Responsive for mobile device 
    ------------------------------------*/
+   @media only screen and (max-width: 400px) {
+    .products-container{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .services {
+      display: flex;
+      align-items: center;
+      margin-left: 20%;
+      margin-top: 10px;
+    }
+  }
+
+
    @media only screen and (max-width: 576px) {
     .products-container{
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
   
     }
   }
@@ -53,21 +66,8 @@
   @media only screen and (min-width: 576px) and (max-width: 966px) {
     .products-container{
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
   
     }
   }
   
-  @media only screen and (max-width: 400px) {
-    .products-container{
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      width: 100%;
-    }
-    .services {
-      display: flex;
-      align-items: center;
-      margin-left: 20%;
-      margin-top: 10px;
-    }
-  }

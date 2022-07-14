@@ -90,7 +90,7 @@ const AddProducts = () => {
                     <input
                         className='mb-2 bg-slate-500 font-bold text-white text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
                         type="submit"
-                        value="Add Comment"
+                        value="Add Product"
                     />
                 </form>
             </div>

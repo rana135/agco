@@ -25,13 +25,15 @@ const Products = () => {
                     </h1>
                 </div>
 
-                <div className='products-container mt-5 lg:ml-24'>
-                    {
-                        product.map(service => <Product
-                            key={service._id}
-                            service={service}
-                        ></Product>)
-                    }
+                <div className='flex justify-center items-center'>
+                    <div className='products-container mt-5'>
+                        {
+                            product.slice(0, 6).map(service => <Product
+                                key={service._id}
+                                service={service}
+                            ></Product>)
+                        }
+                    </div>
                 </div>
             </div>
         </div>
