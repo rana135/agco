@@ -22,6 +22,7 @@ import AllUsers from './pages/Dashboard/AllUsers/AllUsers';
 import ManageProducts from './pages/Dashboard/ManageProducts/ManageProducts';
 import RequireAdmin from './pages/Other/RequireAdmin/RequireAdmin';
 import AddProducts from './pages/Dashboard/AddProducts/AddProducts';
+import ContactUs from './ContactUs/ContactUs';
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/banner" element={<Banner />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='/purchage/:productsId' element={

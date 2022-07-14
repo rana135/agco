@@ -6,7 +6,7 @@ import titleLogo from '../../../assets/logo/AGCO-Logo.webp'
 import auth from '../../../firebase.init';
 
 const Navbar = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
 
     const logout = () => {
         signOut(auth);
@@ -16,6 +16,7 @@ const Navbar = () => {
         <li className='lg:ml-96'><Link to='/'>HOME</Link></li>
         <li><Link to='/blogs'>BLOGS</Link></li>
         <li><Link to='/dashboard'>DASHBOARD</Link></li>
+        <li><Link to='/contact'>CONTACT</Link></li>
         <li>{user ? <button onClick={logout} className="btn btn-secondary">signout</button> : <Link to='/login'>LOGIN</Link>}</li>
     </>
     return (

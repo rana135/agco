@@ -22,7 +22,7 @@ const Client = () => {
         cssEase: "linear"
     };
     return (
-        <div className='mt-20'>
+        <div className='mt-16'>
             <h2 className='text-4xl text-primary font-bold text-center mb-12'>Our Clients</h2>
             <Slider {...settings}>
                 <div className='client'>
