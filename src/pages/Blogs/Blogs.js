@@ -1,10 +1,10 @@
 import React from "react";
 import blog1 from "../../assets/blogs/blog1.jpg";
-import blog2 from "../../assets/blogs/blog2.jpg";
-import blog3 from "../../assets/blogs/blog3.jpg";
-import blog4 from "../../assets/blogs/blog4.jpg";
-import blog5 from "../../assets/blogs/blog5.jpg";
-import blog6 from "../../assets/blogs/blog6.gif";
+import blog2 from "../../assets/blogs/blog2.png";
+import blog3 from "../../assets/blogs/blog3.png";
+import blog4 from "../../assets/blogs/blog4.png";
+import blog5 from "../../assets/blogs/blog5.png";
+import blog6 from "../../assets/blogs/blog6.png";
 import bg from "../../assets/blogs/blogs.webp";
 
 const Blogs = () => {
@@ -37,7 +37,7 @@ const Blogs = () => {
             <img
               alt=""
               src={blog1}
-              className="w-full rounded-lg drop-shadow-2xl lg:mb-0 mb-10"
+              className="w-96 rounded-lg drop-shadow-2xl lg:mb-0 mb-10"
             />
             <div className="mx-5">
               <p className="text-base font-montserrat">
@@ -76,7 +76,7 @@ const Blogs = () => {
             <img
               alt=""
               src={blog2}
-              className="w-full rounded-lg drop-shadow-2xl lg:mb-0 mb-10"
+              className="w-96 rounded-lg drop-shadow-2xl lg:mb-0 mb-10"
             />
             <div className="mx-5">
               <p className="text-base font-montserrat">
@@ -184,10 +184,10 @@ const Blogs = () => {
         </h1>
         <div className="hero">
           <div className="hero-content flex-col lg:flex-row">
-            <img
+            <img style={{width:"2000px"}}
               alt=""
               src={blog5}
-              className="w-full rounded-lg drop-shadow-2xl lg:mb-0 mb-10"
+              className="rounded-lg drop-shadow-2xl lg:mb-0 mb-10"
             />
             <div className="mx-4">
               <p className="text-base font-montserrat">
@@ -219,7 +219,7 @@ const Blogs = () => {
             <img
               alt=""
               src={blog6}
-              className="w-full rounded-lg drop-shadow-2xl lg:mb-0 mb-10"
+              className="w-96 rounded-lg drop-shadow-2xl lg:mb-0 mb-10"
             />
             <div className="mx-4">
               <p className="text-base font-montserrat">

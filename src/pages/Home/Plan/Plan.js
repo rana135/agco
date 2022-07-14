@@ -3,7 +3,7 @@ import React from "react";
 const Plan = () => {
     return (
         <div>
-            <section className="w-full py-20 bg-gray-50 font-montserrat">
+            <section style={{marginBottom:"8%"}} className="w-full mt-5 font-montserrat">
                 <div className="px-10 mx-auto max-w-7xl">
                     <h2 className="text-5xl text-center font-bold text-blue-600">
                         Flexible <span className="text-gray-800">Plans</span>
@@ -11,7 +11,7 @@ const Plan = () => {
                     <p className="mt-3 text-center text-lg text-gray-500">
                         Our flexible plans are Customer to meet the needs of any plans.
                     </p>
-                    <div className="grid gap-5 mt-12 lg:grid-cols-3 md:grid-cols-2">
+                    <div className="grid gap-5 mt-12 lg:grid-cols-3 md:grid-cols-2 bg-gray-50 py-8">
                         <div className="relative flex flex-col justify-between p-8 lg:p-6 xl:p-8 rounded-2xl">
                             <div className="absolute inset-0 w-full h-full transform translate-x-2 translate-y-2 bg-green-50 rounded-2xl"></div>
                             <div className="absolute inset-0 w-full h-full border-2 border-gray-900 rounded-2xl"></div>

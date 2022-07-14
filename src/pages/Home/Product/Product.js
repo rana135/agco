@@ -14,7 +14,7 @@ const Product = ({ service }) => {
     }
     return (
         <div>
-            <div className='product-container p-2 rounded-3 border-2 ' data-aos="fade-down"
+            <div className='product-container bg-gray-100 p-2 rounded-3 border-2 ' data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="1500">
 

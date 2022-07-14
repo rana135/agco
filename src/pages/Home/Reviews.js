@@ -10,7 +10,7 @@ const Reviews = () => {
             .then(data => setReviews(data))
     }, [])
     return (
-        <section className='mt-24 m-3'>
+        <section className='mt-24 m-3 bg-gray-50'>
             <div className='flex justify-between'>
                 <div className='ml-6'>
                     <h2 className='text-xl text-primary'>Customers Reviews</h2>

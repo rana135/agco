@@ -10,7 +10,7 @@ import img7 from "../../../assets/brands/brand7.png";
 const BusinessPartner = () => {
     return (
         <div>
-            <div className="pb-10 mt-16">
+            <div className="pb-10">
                 <dh-component>
                     <div className="container mx-auto">
                         <div className="w-11/12 xl:w-2/3 lg:w-2/3 md:w-2/3 mx-auto sm:mb-10 mb-16">
@@ -30,7 +30,7 @@ const BusinessPartner = () => {
                                 At the same time and maintaining the integrity.
                             </p>
                         </div>
-                        <div className="xl:py-16 lg:py-16 md:py-16 sm:py-16 px-15 flex flex-wrap">
+                        <div className="xl:py-16 lg:py-16 md:py-16 sm:py-16 px-15 flex flex-wrap bg-gray-50 rounded-md">
                             <div className="flex flex-wrap lg:pr-10">
                                 <div className="w-6/12 xl:w-1/4 lg:w-1/4 md:w-1/4 flex justify-center  border-gray-200 xl:pb-10 pb-16 items-center">
                                     <img

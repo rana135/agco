@@ -7,7 +7,6 @@ import Plan from './Plan/Plan';
 import Products from './Products/Products';
 import Reviews from './Reviews';
 import SubscribeCard from './SubscribeCard/SubscribeCard';
-import WhyUs from './WhyUs/WhyUs';
 
 
 
@@ -18,7 +17,6 @@ const Home = () => {
             <Products></Products>
             <Plan></Plan>
             <BusinessSummary></BusinessSummary>
-            <WhyUs></WhyUs>
             <BusinessPartner></BusinessPartner>
             <Client></Client>
             <SubscribeCard></SubscribeCard>

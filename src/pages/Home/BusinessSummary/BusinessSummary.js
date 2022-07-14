@@ -13,7 +13,7 @@ const BusinessSummary = () => {
             <section className="our-facts">
                 <div>
                     <h2 className='text-center'>A Few Facts About Our Company</h2>
-                    <div className='flex justify-center'>
+                    <div className='flex justify-center bg-gray-50 py-5'>
                         <div className='lg:mr-14'>
                             <div>
                                 <div>
