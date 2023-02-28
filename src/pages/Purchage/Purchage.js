@@ -26,7 +26,7 @@ const Purchage = () => {
         // console.log(orderQuantity)
         // const update = { orderQuantity, QuantityDecrese }
         // const url = `
-        // https://still-retreat-27608.herokuapp.com/products/${productsId}`
+        // https://agco-server.vercel.app/products/${productsId}`
         // fetch(url, {
         //     method: "PUT",
         //     headers: {
@@ -41,7 +41,7 @@ const Purchage = () => {
         //     })
 
         //  Post Method
-        axios.post('https://still-retreat-27608.herokuapp.com/orders', data)
+        axios.post('https://agco-server.vercel.app/orders', data)
             .then(response => {
                 const data = response.data
                 console.log(data)
@@ -139,7 +139,7 @@ const Purchage = () => {
                 {errors.orderQuantity && (
                     <p className='text-red-500'>
                         minimum quantity
-                        Will not be less than and will <br/>not be more than the available quantity.
+                        Will not be less than and will <br />not be more than the available quantity.
                     </p>
                 )}
 

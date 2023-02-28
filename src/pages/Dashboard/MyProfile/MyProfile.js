@@ -12,7 +12,7 @@ const MyProfile = () => {
     console.log(user);
     const onSubmit = async data => {
         console.log(data)
-        const url = `https://still-retreat-27608.herokuapp.com/updateProfile`
+        const url = `https://agco-server.vercel.app/updateProfile`
         fetch(url, {
             method: "POST",
             headers: {
@@ -22,9 +22,9 @@ const MyProfile = () => {
         })
             .then(res => res.json())
             .then(result => {
-                reset()
                 if (result) {
                     toast.success('Update Profile Sucessfully')
+                    reset()
                 }
             }
             )

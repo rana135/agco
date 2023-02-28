@@ -2,9 +2,9 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const UserRow = ({ user }) => {
-    const { email, role } = user
+    const { email, role, _id } = user
     const makeAdmin = () => {
-        fetch(`https://still-retreat-27608.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://agco-server.vercel.app/user/admin/${email}`, {
             method: 'PUT',
         })
             .then(res => {
@@ -20,10 +20,29 @@ const UserRow = ({ user }) => {
                 }
             })
     }
+    const handleDelete = id => {
+        console.log(id)
+        const proceed = window.confirm('Are you sure ?')
+
+        if (proceed) {
+            const url = `https://agco-server.vercel.app/deleteUser/${id}`
+            console.log(url)
+            fetch(url, {
+                method: "DELETE",
+                body: JSON.stringify({ id })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    // const remaining = users.filter(p => p._id !== id)
+                    // setUsers(remaining)
+                })
+        }
+    }
     return (
         <tr>
             <td>{email}</td>
-            <td>Remove User ❌</td>
+            <td onClick={() => handleDelete(_id)}>Remove User ❌</td>
             <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-sm">Make Admin 👨‍✈️</button>}</td>
         </tr>
     );

@@ -8,13 +8,13 @@ import './AddReview.css';
 
 
 const AddReview = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     console.log(user);
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = (data, event) => {
         console.log(data)
-        const url = `https://still-retreat-27608.herokuapp.com/reviews`
+        const url = `https://agco-server.vercel.app/reviews`
         fetch(url, {
             method: "POST",
             headers: {

@@ -9,7 +9,7 @@ const AllUsers = () => {
     const [user, loading] = useAuthState(auth);
     useEffect(() => {
         if (user) {
-            fetch('https://still-retreat-27608.herokuapp.com/user')
+            fetch('https://agco-server.vercel.app/user')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
@@ -35,6 +35,8 @@ const AllUsers = () => {
                             users.map(user => <UserRow
                                 key={user._id}
                                 user={user}
+                                users={users}
+                                setUsers={setUsers}
                             ></UserRow>)
                         }
                     </tbody>

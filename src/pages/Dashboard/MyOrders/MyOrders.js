@@ -9,7 +9,7 @@ const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
     useEffect(() => {
         if (user) {
-            const url = `https://still-retreat-27608.herokuapp.com/orders?email=${user.email}`
+            const url = `https://agco-server.vercel.app/orders?email=${user.email}`
             console.log(url)
             fetch(url)
                 .then(res => res.json())
@@ -25,7 +25,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://still-retreat-27608.herokuapp.com/orders/${id}`
+            const url = `https://agco-server.vercel.app/orders/${id}`
             console.log(url)
             fetch(url, {
                 method: "DELETE",

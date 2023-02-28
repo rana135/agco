@@ -10,7 +10,7 @@ const ManageProducts = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://still-retreat-27608.herokuapp.com/products/${id}`
+            const url = `https://agco-server.vercel.app/products/${id}`
             fetch(url, {
                 method: "Delete"
             })

@@ -5,7 +5,7 @@ const usePurchage = productsId => {
 
     const [product, setProduct] = useState([])
     useEffect(() => {
-        const url = (`https://still-retreat-27608.herokuapp.com/products/${productsId}`)
+        const url = (`https://agco-server.vercel.app/products/${productsId}`)
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
