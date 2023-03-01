@@ -13,7 +13,7 @@ const Navbar = () => {
     };
 
     const menuItems = <>
-        <li className='lg:ml-96'><Link to='/'>HOME</Link></li>
+        <li className='lg:ml-80'><Link to='/'>HOME</Link></li>
         <li><Link to='/blogs'>BLOGS</Link></li>
         <li><Link to='/about'>ABOUT</Link></li>
         <li><Link to='/dashboard'>DASHBOARD</Link></li>
