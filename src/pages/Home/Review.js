@@ -14,10 +14,10 @@ const Review = ({ review }) => {
                             </div>
                         </div>
                         <div>
-                            <h2 className='text-xl font-bold'>{review.name}</h2>
+                            <h2 className='text-xl'>{review.name}</h2>
                             <div className='flex'>
                                 <p>{review.location}</p>
-                                <p style={{marginLeft:"10px"}} className='font-bold'>Ratings:{review.ratings}</p>
+                                <p style={{marginLeft:"10px"}}>Ratings:{review.ratings}</p>
                             </div>
                         </div>
                     </div>
