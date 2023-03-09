@@ -10,7 +10,7 @@ const ManageProducts = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://agco-server.vercel.app/products/${id}`
+            const url = `http://localhost:5000/products/${id}`
             fetch(url, {
                 method: "Delete"
             })
@@ -42,24 +42,24 @@ const ManageProducts = () => {
             <div className='MngProducts-container'>
                 {
                     product.map(p => <div>
-                        <div className='MngProducts shadow-sm p-2 text-center rounded-3 border-2'>
+                        <div className='MngProducts shadow-sm p-2 rounded-3 border-2'>
 
                             <img src={p.img} alt="" />
-                            <h2>Name : {p.name}</h2>
-                            <h5>Price : ${p.price}<span className='text-xs'>/Unit</span></h5>
-                            <h5>Available Quantity : {p.availableQuantity}</h5>
-                            <h5>MOQ:{p.orderQuantity} <span className='text-xs'>/Minimum order quantity</span></h5>
-                            <Flip right cascade><p> {p.description}</p></Flip>
-                            <button className='btn btn-dark admit-btn' onClick={() => handleDelete(p._id)}>
-                                Delete Item
-                            </button>
+                            <h2 className='font-bold text-xxl'>Name:{p.name}</h2>
+                            <h5><span className='font-bold text-xxl'>PPU</span> <span className='text-xs'>(Price Per Unit)</span> :${p.price}</h5>
+                            <h5><span className='font-bold text-xxl'>Order Quantity:</span> : {p.orderQuantity}</h5>
+                            <p><span className='font-bold text-xxl'>Available Quantity :</span> {p.availableQuantity}</p>
+                            <Flip right cascade><p>{p.description.slice(0, 80)}...</p></Flip>
+                        <button className='btn btn-dark admit-btn' onClick={() => handleDelete(p._id)}>
+                            Delete Item
+                        </button>
 
-                        </div>
+                    </div>
 
                     </div>)
                 }
-            </div>
         </div>
+        </div >
     );
 };
 

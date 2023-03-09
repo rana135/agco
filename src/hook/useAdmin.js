@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 const useAdmin = user => {
     const [admin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true);
     useEffect(() => {
         const email = user?.email;
+        // console.log(email);
         if (email) {
-            fetch(`https://agco-server.vercel.app/admin/${email}`, {
+            fetch(`http://localhost:5000/admin/${email}`, {
                 method: 'GET',
+                headers:{
+                    "authorization":`Bearer ${localStorage.getItem("accessToken")}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    // console.log(data);
                     setAdmin(data.admin);
                     setAdminLoading(false);
                 })

@@ -2,7 +2,7 @@ import React from 'react';
 import './BusinessSummary.css'
 // import AnimatedNumber from 'react-animated-number';
 import CountUp from 'react-countup';
-import summery from '../../../assets/images/summery.webp'
+import summery from '../../../assets/banner/0.png'
 
 
 

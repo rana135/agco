@@ -2,22 +2,28 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import titleLogo from '../../../assets/logo/AGCO-Logo.webp'
+import titleLogo from '../../../assets/logo/AGCO-Logo.jpg'
 import auth from '../../../firebase.init';
+import {AiFillHome} from 'react-icons/ai';
+import {RiArticleFill} from 'react-icons/ri';
+import {HiInformationCircle} from 'react-icons/hi';
+import {MdDashboardCustomize} from 'react-icons/md';
+import {MdContactPhone} from 'react-icons/md';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
 
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem("accessToken");
     };
 
     const menuItems = <>
-        <li className='lg:ml-80'><Link to='/'>HOME</Link></li>
-        <li><Link to='/blogs'>BLOGS</Link></li>
-        <li><Link to='/about'>ABOUT</Link></li>
-        <li><Link to='/dashboard'>DASHBOARD</Link></li>
-        <li><Link to='/contact'>CONTACT</Link></li>
+        <li className='lg:ml-48'><Link to='/'>HOME<AiFillHome /></Link></li>
+        <li><Link to='/blogs'>BLOGS<RiArticleFill /></Link></li>
+        <li><Link to='/about'>ABOUT<HiInformationCircle /></Link></li>
+        <li><Link to='/dashboard'>DASHBOARD<MdDashboardCustomize /></Link></li>
+        <li><Link to='/contact'>CONTACT<MdContactPhone /></Link></li>
         <li>{user ? <button onClick={logout} className="btn btn-secondary">signout</button> : <Link to='/login'>LOGIN</Link>}</li>
     </>
     return (

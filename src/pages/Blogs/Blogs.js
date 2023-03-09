@@ -6,6 +6,7 @@ import blog4 from "../../assets/blogs/blog4.png";
 import blog5 from "../../assets/blogs/blog5.png";
 import blog6 from "../../assets/blogs/blog6.png";
 import bg from "../../assets/blogs/blogs.webp";
+import {SiMicrodotblog} from "react-icons/si"
 
 const Blogs = () => {
   return (
@@ -17,19 +18,15 @@ const Blogs = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
-        className="py-5 text-white"
+        className="py-36 text-white"
       >
-        <div className="lg:ml-28 py-10 ml-10">
-          <h1 className="font-libreBasker font-medium text-6xl">Blogs</h1>
-          <h5 className="font-openSans text-xl font-medium py-5">
-            Home{" "}
-            <span className="font-montserrat font-light text-xl">/ Blogs</span>
-          </h5>
+        <div className="lg:ml-28 ml-10">
+          <SiMicrodotblog size="85"/>
         </div>
       </div>
 
       <div className="pt-10">
-        <h1 className="text-center font-libreBasker text-4xl lg:my-16 my-10 mx-5">
+        <h1 className="text-center font-libreBasker text-4xl lg:my-4 my-10 mx-5">
           How will you improve the <br /> Performance of a React Application?
         </h1>
         <div className="hero">

@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import React from 'react';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import signUp from '../../assets/images/Sign up-pana.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import useToken from '../../hook/useToken';
-import { toast } from 'react-toastify';
 
 
 const SignUp = () => {
@@ -22,18 +21,15 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-    const [token] = useToken(user)
+    const [token] = useToken(user || gUser);
 
-
-    useEffect(() => {
-        if (user || gUser) {
-            navigate(from, { replace: true });
-            toast.success('SignUp sucessfully')
-        }
-    }, [token, from, navigate])
+    if (token) {
+        navigate(from, { replace: true });
+        // toast.success('SignUp sucessfully');
+    }
 
     const onSubmit = async data => {
-        console.log(data)
+        // console.log(data)
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         console.log('Updated profile');

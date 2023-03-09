@@ -1,50 +1,50 @@
 [
     {
-        "name": "Geringhoff",
+        "name": "Agricultural Baler",
         "price": "589",
         "orderQuantity": "1250",
         "availableQuantity": "5000",
-        "description": " Repair your worn or damaged poly corn head hood quickly and easily.The patch is made of hard, slippery 1/4inch UHMW, suitable for high wear areas.",
-        "img": "https://i.ibb.co/fM8gTdx/corn-head-snout.jpg"
+        "description": " An agricultural baler is an agri tool or implement used to compress a cut and scrape crop into a compact or suitable size. A baler, when used as a tractor attachment, converts agricultural wastes such as hay and flax straws into bales that can then be used for a variety of purposes such as haylage and animal feed. When crop residue is in a baler, it is easier to transport and store it. It helps you save money, time, and space by reducing trash production by 80 percent. Furthermore, it reduces the risk of fires.",
+        "img": "https://i.ibb.co/1ZXbLSg/Agricultural-Baler.png"
     },
     {
-        "name": "GUARD- JD, GEHL MOWERS",
+        "name": "Multicrop Thresher",
         "price": "550",
         "orderQuantity": "1300",
         "availableQuantity": "5500",
-        "description": "Fits Badger Northland Mowers – 1978 and Later. Gehl Mower Conditioners. Hesston Mower Conditioners. J.I. Case Windrowers. John Deere Mowers.",
-        "img": "https://i.ibb.co/6PRQ14K/guard-jd.jpg"
+        "description": "Our vast array of multicrop thresher – Hopper Tractor model is manufactured from premium quality raw material and is largely demanded in agricultural industry. Our range is suitable for threshing of wheat, soyabean, grams, peas, Maize , Millets , sorghum and oats. It is covered with safety terms as per Indian standard laid by B.I.S.Specifications:Suitable for the threshing of Wheat, Sorghum, Barley, Grams (Chick-Peas), Soybean, Millets, Oats, all type of Peas , Beans  and Pulses etc.",
+        "img": "https://i.ibb.co/7n1tZwy/Multicrop-Threshe.png"
     },
     {
-        "name": "Lever, Seperator Drive, Idler",
+        "name": "Agricultural Farm Digger",
         "price": "790",
         "orderQuantity": "1000",
         "availableQuantity": "6000",
-        "description": "Lever, Seperator Drive, Idler To Fit International/CaseIH -  NEW (Aftermarket) Cross Reference Numbers, 1347039C1",
-        "img": "https://i.ibb.co/nzKxyxJ/seperator-Drice.jpg"
+        "description": "The efficient field preparation provided by the Farmking Post Hole Digger falls under the area of Seeding & Plantation. It has a category I&II hitch, a weight capacity of 300 kg, and enough horsepower to be installed on a tractor. According to a farmer's budget, the Farmking Post Hole Digger is affordable and something they can readily afford.",
+        "img": "https://i.ibb.co/KXhGcyg/Agricultural-Farm-Digger.png"
     },
     {
-        "name": "Sheave, Variable Speed To Fit",
+        "name": "Land Leveler",
         "price": "850",
         "orderQuantity": "1400",
         "availableQuantity": "4500",
-        "description": "A sheave or pulley wheel is a grooved wheel often used for holding a belt, wire rope, or rope and incorporated into a pulley.",
-        "img": "https://i.ibb.co/Vj4N8c6/sheave.jpg"
+        "description": "A land leveler is an agricultural machine used to level and prepare the ground for planting or other agricultural activities. It is also known as a land plane or a box scraper. The land leveler is typically towed behind a tractor and consists of a long, wide blade or scraper that is used to move and redistribute soil.",
+        "img": "https://i.ibb.co/80Js36y/Land-Leveler.png"
     },
     {
-        "name": "Heavy hammer knives",
+        "name": "Fertilizer Spreader",
         "price": "450",
         "orderQuantity": "1500",
         "availableQuantity": "8500",
-        "description": "Hammer is an agricultural tool that deposits impact on an object. Hammer is used mainly for driving nails, fitting parts, forging metals and breaking apart objects.",
-        "img": "https://i.ibb.co/LpsMhBp/heavy-hammer-knives.png"
+        "description": "A fertilizer spreader is an agricultural machine used to evenly distribute fertilizers, seeds, lime, or other soil amendments onto a field or crop. Fertilizer spreaders can come in various sizes and configurations, ranging from small handheld models to large tractor-mounted spreaders.",
+        "img": "https://i.ibb.co/qJGhNTH/Fertilizer-Spreader.png"
     },
     {
-        "name": "Sickle blade assembly",
+        "name": "Mounted Disc Plough        ",
         "price": "625",
         "orderQuantity": "800",
         "availableQuantity": "6800",
         "description": "Sickle blade assembly GW-34509 moves back and forth in front of the mower to cut thick grass and brush. The assembly may include multiple parts;",
-        "img": "https://i.ibb.co/CH5dJwM/sickle-bar.jpg"
+        "img": "https://i.ibb.co/1bVF8Dt/Mounted-Disc-Plough.png"
     }
 ]

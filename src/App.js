@@ -24,6 +24,8 @@ import RequireAdmin from './pages/Other/RequireAdmin/RequireAdmin';
 import AddProducts from './pages/Dashboard/AddProducts/AddProducts';
 import ContactUs from './ContactUs/ContactUs';
 import WhyUs from './pages/Home/WhyUs/WhyUs';
+import Profiles from './pages/Dashboard/MyProfile/Profiles';
+
 
 
 
@@ -56,11 +58,23 @@ function App() {
           </RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='myReview' element={<MyReview></MyReview>}></Route>
-          <Route path='users' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
-          <Route path='addProducts' element={<RequireAdmin><AddProducts></AddProducts></RequireAdmin>}></Route>
-          <Route path='manageProducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
-          <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
-
+          <Route path='users' element={
+            <RequireAdmin>
+              <AllUsers />
+            </RequireAdmin>}>
+          </Route>
+          <Route path='addProducts' element={
+            <RequireAdmin>
+              <AddProducts />
+            </RequireAdmin>}>
+          </Route>
+          <Route path='manageProducts' element={
+            <RequireAdmin>
+              <ManageProducts />
+            </RequireAdmin>}>
+          </Route>
+          <Route path='updateProfile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='myProfile' element={<Profiles />}></Route>
         </Route>
 
         <Route path="*" element={<NotFound />} />

@@ -1,19 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
+import { RiDeleteBin6Fill } from "react-icons/ri"
+import { FcPaid } from "react-icons/fc"
+import { toast } from 'react-toastify';
 
 
 const MyOrders = () => {
     const [products, setProducts] = useState([])
     const [user, loading] = useAuthState(auth);
+    const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            const url = `https://agco-server.vercel.app/orders?email=${user.email}`
+            const url = `http://localhost:5000/orders?email=${user.email}`
             console.log(url)
-            fetch(url)
-                .then(res => res.json())
-                .then(data => setProducts(data))
+            fetch(url, {
+                method: "GET",
+                headers: {
+                    "authorization": `Bearer ${localStorage.getItem("accessToken")}`
+                }
+            })
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        navigate("/");
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    setProducts(data)
+                })
         }
     }, [user])
 
@@ -25,7 +42,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://agco-server.vercel.app/orders/${id}`
+            const url = `http://localhost:5000/orders/${id}`
             console.log(url)
             fetch(url, {
                 method: "DELETE",
@@ -33,9 +50,12 @@ const MyOrders = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
-                    const remaining = products.filter(p => p._id !== id)
-                    setProducts(remaining)
+                    // console.log(data)
+                    if (data.deletedCount) {
+                        const remaining = products.filter(p => p._id !== id)
+                        setProducts(remaining)
+                        toast("Your Order is Cancel")
+                    }
                 })
         }
     }
@@ -65,8 +85,8 @@ const MyOrders = () => {
                             <td>{product.orderQuantity}</td>
                             <td>{product.address}</td>
                             <td>{product.number}</td>
-                            <td onClick={() => handleDelete(product._id)}> ❌ </td>
-                            <td>💳</td>
+                            <td onClick={() => handleDelete(product._id)}> <RiDeleteBin6Fill size="20" /> </td>
+                            <td><FcPaid size="20" /></td>
                         </tr>)}
                     </tbody>
                 </table>

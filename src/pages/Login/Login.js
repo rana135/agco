@@ -6,6 +6,7 @@ import login from '../../assets/images/login.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useToken from '../../hook/useToken';
 
 
 const Login = () => {
@@ -22,15 +23,15 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
-    
+
 
 
     const onSubmit = async data => {
         setResetPass(data);
-        console.log(data)
+        // console.log(data)
         await signInWithEmailAndPassword(data.email, data.password)
     };
-    const resetPassword = async () =>{
+    const resetPassword = async () => {
         if (resetPass.email) {
             await sendPasswordResetEmail(resetPass.email);
             toast('Sent email');
@@ -39,8 +40,8 @@ const Login = () => {
             toast("please enter your email address")
         }
     }
-    
 
+    const [token] = useToken(user || gUser);
 
     let signInError;
     if (error || gError || resetError) {
@@ -50,7 +51,7 @@ const Login = () => {
     if (loading || gLoading || sending) {
         return <Loading></Loading>;
     }
-    if (user || gUser) {
+    if (token) {
         navigate(from, { replace: true });
     }
     return (
@@ -118,9 +119,9 @@ const Login = () => {
                         </form>
                         <p><small>New to AGCO? <Link className='text-primary link-hover' to="/signup">Create New Account</Link></small></p>
 
-                        <p><small>Forget Password? <span 
-                        onClick={resetPassword}
-                        className='text-primary link-hover'>Reset Password</span></small></p>
+                        <p><small>Forget Password? <span
+                            onClick={resetPassword}
+                            className='text-primary link-hover'>Reset Password</span></small></p>
                         <div className="divider text-primary">OR</div>
                         <button onClick={() => signInWithGoogle()}
                             className="btn btn-outline btn-primary w-full border-2">

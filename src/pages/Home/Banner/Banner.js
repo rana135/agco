@@ -1,9 +1,7 @@
 import React from 'react';
-import banner1 from '../../../assets/banner/banner2.jpg'
-import banner2 from '../../../assets/banner/banner1.jpg'
-import banner3 from '../../../assets/banner/banner3.jpg'
-import banner4 from '../../../assets/banner/banner4.jpg'
-
+import banner1 from '../../../assets/banner/banner.png'
+import banner2 from '../../../assets/banner/1.png'
+import banner3 from '../../../assets/banner/4.png'
 
 const Banner = () => {
     return (
@@ -38,16 +36,17 @@ const Banner = () => {
                             className="block w-full"
                             alt="..."
                         />
-                        <div className="carousel-caption hidden md:block absolute text-center">
-                            <h1 className="text-4xl font-bold">AGCO INDUSTRIES LIMITED</h1>
-                            <h2 className='font-bold text-2xl'>Spirit Of Innovation</h2>
-                            <p className='text-bold'>THE LEADING AGRICULTURAL MACHINERY MANUFACTURE OF THE COUNTRY
-                            </p>
-                        </div>
                     </div>
                     <div className="carousel-item relative float-left w-full">
                         <img
                             src={banner2}
+                            className="block w-full"
+                            alt="..."
+                        />
+                    </div>
+                    <div className="carousel-item relative float-left w-full">
+                        <img
+                            src={banner3}
                             className="block w-full"
                             alt="..."
                         />
@@ -57,28 +56,7 @@ const Banner = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="carousel-item relative float-left w-full">
-                        <img
-                            src={banner3}
-                            alt="..."
-                        />
-                        <div className="carousel-caption hidden md:block absolute text-center">
-                            <h2 className='font-bold text-2xl'>Spirit Of Innovation</h2>
-                            <p className='text-bold'>We have performed and demonstrated with our machineries throughout the whole country round the year.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="carousel-item relative float-left w-full">
-                        <img
-                            src={banner4}
-                            alt="..."
-                        />
-                        <div className="carousel-caption hidden md:block absolute text-center">
-                            <h2 className='font-bold text-2xl'>Spirit Of Innovation</h2>
-                            <p className='text-bold'> All the products manufactured by Alim Industries Limited is patent designed trademark and copy right protected.
-                            </p>
-                        </div>
-                    </div>
+                    
                 </div>
                 <button
                     className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"

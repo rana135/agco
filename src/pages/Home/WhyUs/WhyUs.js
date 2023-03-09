@@ -4,7 +4,7 @@ import whyUs from '../../../assets/images/why-us.png'
 const WhyUs = () => {
     return (
         <div>
-            <h1 className='text-4xl text-primary text-center mt-28 font-bold'>Why You Should Choose Us???</h1>
+            <h1 className='text-4xl text-primary text-center mt-4 font-bold'>Why You Should Choose Us???</h1>
             <div className="card lg:card-side bg-base-100 shadow-xl">
                 <figure><img className='w-100' src={whyUs} alt="Album" /></figure>
                 <div className="card-body lg:w-44">

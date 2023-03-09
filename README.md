@@ -1,6 +1,6 @@
 # Project Name:- AGCO Manufacture LTD.
 ## [Firebase Live Site Hosting link](https://agco-198f0.web.app/).
-## [Server Site Code link](https://agco-server.vercel.app/).
+## [Server Site Code link](http://localhost:5000/).
 
 ## Project Description:-
 * This is basically a Manufacture website,

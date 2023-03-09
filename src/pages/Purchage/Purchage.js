@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import usePurchage from '../../hook/usePurchage';
 import './Purchage.css'
+import SimilarProduct from './SimilarProduct';
 
 const Purchage = () => {
     const { productsId } = useParams()
@@ -26,7 +27,7 @@ const Purchage = () => {
         // console.log(orderQuantity)
         // const update = { orderQuantity, QuantityDecrese }
         // const url = `
-        // https://agco-server.vercel.app/products/${productsId}`
+        // http://localhost:5000/products/${productsId}`
         // fetch(url, {
         //     method: "PUT",
         //     headers: {
@@ -41,12 +42,12 @@ const Purchage = () => {
         //     })
 
         //  Post Method
-        axios.post('https://agco-server.vercel.app/orders', data)
+        axios.post('http://localhost:5000/orders', data)
             .then(response => {
                 const data = response.data
                 console.log(data)
                 if (data.insertedId) {
-                    toast('Your order is booked')
+                    toast('Your order is booked');
                     reset()
                 }
             })
@@ -58,98 +59,124 @@ const Purchage = () => {
             <div className='purchage-container p-2 text-center rounded-3' data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="1500">
+                <div class="min-w-screen min-h-screen bg-green-200 flex items-center p-5 lg:p-10 overflow-hidden relative">
+                    <div class="w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">
+                        <div class="md:flex items-center -mx-20">
+                            <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
+                                <div className='zoom-img relative'>
+                                    <ReactImageMagnify {...{
+                                        smallImage: {
+                                            alt: 'Wristwatch by Ted Baker London',
+                                            isFluidWidth: true,
+                                            src: product.img
+                                        },
+                                        largeImage: {
+                                            src: product.img,
+                                            width: 500,
+                                            height: 700
+                                        }
+                                    }} />
+                                </div>
+                            </div>
+                            <div class="w-full md:w-1/2 px-10">
+                                <div class="mb-10">
+                                    <h1 class="font-bold uppercase text-2xl mb-5">Name : {product.name}</h1>
+                                    <p class="text-sm">{product.description}
+                                        <a href="/" alt="W3Schools" class="opacity-50 text-gray-900 hover:opacity-100 inline-block text-xs leading-none border-b border-gray-900"> MORE <i class="mdi mdi-arrow-right"></i></a></p>
+                                    <h5><span className='font-bold'>Available Quantity : </span>{product.availableQuantity}</h5>
+                                    <h5><span className='font-bold'>Order Quantity: </span>{product.orderQuantity} <span className='text-xs'>/Minimum order quantity</span></h5>
+                                </div>
 
-                <div className='zoom-img'>
-                    <ReactImageMagnify {...{
-                        smallImage: {
-                            alt: 'Wristwatch by Ted Baker London',
-                            isFluidWidth: true,
-                            src: product.img
-                        },
-                        largeImage: {
-                            src: product.img,
-                            width: 500,
-                            height: 700
-                        }
-                    }} />
-
-                </div>
-
-                <div className='zoom-description ml-3'>
-                    <h2 className='text-xl font-bold'>Name : {product.name}</h2>
-                    <h5><span className='font-bold'>Price : </span>${product.price}<span className='text-xs'>/Unit</span></h5>
-                    <h5><span className='font-bold'>Available Quantity : </span>{product.availableQuantity}</h5>
-                    <h5><span className='font-bold'>Order Quantity: </span>{product.orderQuantity} <span className='text-xs'>/Minimum order quantity</span></h5>
-                    <Flip right cascade><p> {product.description}</p></Flip>
+                                <div>
+                                    <div class="inline-block align-bottom mr-5">
+                                        <span class="text-2xl leading-none align-baseline">$</span>
+                                        <span class="font-bold text-5xl leading-none align-baseline">{product.price}</span>
+                                        <span class="text-lg leading-none align-baseline">Unit</span>
+                                    </div>
+                                    <div class="inline-block align-bottom">
+                                        <label htmlFor="my-modal-3" class="btn bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <form className='lg:ml-80' onSubmit={handleSubmit(onSubmit)}>
-                <input
-                    className='mb-2 text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
-                    value={product.name}
-                    {...register("productName")}
-                /><br />
+            {/* Put this part before </body> tag */}
+            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box relative">
+                    <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2">✕</label>
+                    <h3 className="text-lg font-bold">Orders Here</h3>
+                    <form className='flex flex-col justify-center items-center leading-3' onSubmit={handleSubmit(onSubmit)}>
+                        <input
+                            className=' text-center rounded-md h-12 input input-bordered input-primary w-full'
+                            value={product.name}
+                            {...register("productName")}
+                        /><br />
 
-                <input
-                    className='mb-2 text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
-                    value={user.displayName}
-                    {...register("name", { required: true, maxLength: 40 })}
-                /><br />
+                        <input
+                            className='text-center rounded-md h-12 input input-bordered input-primary w-full '
+                            value={user.displayName}
+                            {...register("name", { required: true, maxLength: 40 })}
+                        /><br />
 
-                <input
-                    className='mb-2 text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
-                    value={user.email}
-                    {...register("email")}
-                /><br />
+                        <input
+                            className=' text-center rounded-md h-12 input input-bordered input-primary w-full '
+                            value={user.email}
+                            {...register("email")}
+                        /><br />
 
-                <input
-                    className='mb-2 input input-bordered input-primary w-full max-w-xs ' placeholder='Enter Your Address'
-                    type="text" {...register("address", {
-                        required: {
-                            value: true,
-                            message: "Address is Required"
-                        }
-                    })}
-                /><br />
-                <label className="label">
-                    {errors.address?.type === 'required' && <span className="label-text text-red-500">{errors.address.message}</span>}
-                </label>
+                        <input
+                            className=' input input-bordered input-primary w-full ' placeholder='Enter Your Address'
+                            type="text" {...register("address", {
+                                required: {
+                                    value: true,
+                                    message: "Address is Required"
+                                }
+                            })}
+                        /><br />
+                        <span>
+                            {errors.address?.type === 'required' && <span className="label-text text-red-500">{errors.address.message}</span>}
+                        </span>
 
-                <input
-                    className='input input-bordered input-primary w-full max-w-xs ' placeholder='Enter Phone Number'
-                    type="number" {...register("number",
-                        {
-                            maxLength: 15, required: {
-                                value: true,
-                                message: "Number is required"
-                            },
-                        })}
-                /><br />
-                <label className="label">
-                    {errors.number?.type === 'required' && <span className="label-text-alt text-red-500">{errors.number.message}</span>}
-                </label>
-                <br />
+                        <input
+                            className='input input-bordered input-primary w-full ' placeholder='Enter Phone Number'
+                            type="number" {...register("number",
+                                {
+                                    maxLength: 15, required: {
+                                        value: true,
+                                        message: "Number is required"
+                                    },
+                                })}
+                        /><br />
+                        <span>
+                            {errors.number?.type === 'required' && <span className="label-text-alt text-red-500">{errors.number.message}</span>}
+                        </span>
+                        <br />
 
-                <input defaultValue={product.orderQuantity}
-                    className='mb-2 input input-bordered input-primary w-full max-w-xs '
-                    type="number" {...register("orderQuantity", { min: MinOQ, max: AvlOQ })}
-                /> <br />
+                        <input defaultValue={product.orderQuantity}
+                            className=' input input-bordered input-primary w-full '
+                            type="number" {...register("orderQuantity", { min: MinOQ, max: AvlOQ })}
+                        /> <br />
 
-                {errors.orderQuantity && (
-                    <p className='text-red-500'>
-                        minimum quantity
-                        Will not be less than and will <br />not be more than the available quantity.
-                    </p>
-                )}
+                        {errors.orderQuantity && (
+                            <span className='text-red-500'>
+                                minimum quantity
+                                Will not be less than and will <br />not be more than the available quantity.
+                            </span>
+                        )}
 
-                <input
-                    className=' bg-slate-500 font-bold text-white text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
-                    type="submit"
-                    value="Order"
-                />
-
-            </form>
+                        <input
+                            className=' bg-slate-500 font-bold text-white text-center rounded-md h-12 input input-bordered input-primary w-full '
+                            type="submit"
+                            value="Order"
+                        />
+                    </form>
+                </div>
+            </div>
+            <SimilarProduct></SimilarProduct>
         </div>
     );
 };
