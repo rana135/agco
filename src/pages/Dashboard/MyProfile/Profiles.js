@@ -12,16 +12,16 @@ const Profiles = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            const url = `http://localhost:5000/profile?email=${user.email}`
+            const url = `https://agco-server.vercel.app/profile?email=${user.email}`
             console.log(url)
-            fetch(url,{
-                method:"GET",
-                headers:{
-                    "authorization":`Bearer ${localStorage.getItem("accessToken")}`
+            fetch(url, {
+                method: "GET",
+                headers: {
+                    "authorization": `Bearer ${localStorage.getItem("accessToken")}`
                 }
             })
                 .then(res => {
-                    if(res.status === 401 || res.status === 403){
+                    if (res.status === 401 || res.status === 403) {
                         navigate("/");
                     }
                     return res.json();

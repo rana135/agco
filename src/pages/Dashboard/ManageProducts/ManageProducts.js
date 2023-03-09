@@ -10,7 +10,7 @@ const ManageProducts = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://agco-server.vercel.app/products/${id}`
             fetch(url, {
                 method: "Delete"
             })
@@ -50,15 +50,15 @@ const ManageProducts = () => {
                             <h5><span className='font-bold text-xxl'>Order Quantity:</span> : {p.orderQuantity}</h5>
                             <p><span className='font-bold text-xxl'>Available Quantity :</span> {p.availableQuantity}</p>
                             <Flip right cascade><p>{p.description.slice(0, 80)}...</p></Flip>
-                        <button className='btn btn-dark admit-btn' onClick={() => handleDelete(p._id)}>
-                            Delete Item
-                        </button>
+                            <button className='btn btn-dark admit-btn' onClick={() => handleDelete(p._id)}>
+                                Delete Item
+                            </button>
 
-                    </div>
+                        </div>
 
                     </div>)
                 }
-        </div>
+            </div>
         </div >
     );
 };

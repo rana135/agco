@@ -14,7 +14,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            const url = `http://localhost:5000/orders?email=${user.email}`
+            const url = `https://agco-server.vercel.app/orders?email=${user.email}`
             console.log(url)
             fetch(url, {
                 method: "GET",
@@ -42,7 +42,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://agco-server.vercel.app/orders/${id}`
             console.log(url)
             fetch(url, {
                 method: "DELETE",

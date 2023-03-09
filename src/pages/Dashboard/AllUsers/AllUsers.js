@@ -9,7 +9,7 @@ const AllUsers = () => {
     const [user, loading] = useAuthState(auth);
     useEffect(() => {
         if (user) {
-            fetch('http://localhost:5000/user')
+            fetch('https://agco-server.vercel.app/user')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }
@@ -34,7 +34,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((userInfo,index) => <UserRow
+                            users.map((userInfo, index) => <UserRow
                                 key={userInfo._id}
                                 userInfo={userInfo}
                                 users={users}

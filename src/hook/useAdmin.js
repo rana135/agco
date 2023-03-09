@@ -7,10 +7,10 @@ const useAdmin = user => {
         const email = user?.email;
         // console.log(email);
         if (email) {
-            fetch(`http://localhost:5000/admin/${email}`, {
+            fetch(`https://agco-server.vercel.app/admin/${email}`, {
                 method: 'GET',
-                headers:{
-                    "authorization":`Bearer ${localStorage.getItem("accessToken")}`
+                headers: {
+                    "authorization": `Bearer ${localStorage.getItem("accessToken")}`
                 }
             })
                 .then(res => res.json())

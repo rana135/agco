@@ -11,7 +11,7 @@ const AddProducts = () => {
     console.log(user)
     const onSubmit = (data) => {
         console.log(data)
-        const url = `http://localhost:5000/products`
+        const url = `https://agco-server.vercel.app/products`
         fetch(url, {
             method: "POST",
             headers: {
