@@ -5,16 +5,17 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
 import { RiDeleteBin6Fill } from "react-icons/ri"
 import { FcPaid } from "react-icons/fc"
-import { toast } from 'react-toastify';
+import swal from "sweetalert";
 
 
 const MyOrders = () => {
     const [products, setProducts] = useState([])
+    console.log(products);
     const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            const url = `https://agco-server.vercel.app/orders?email=${user.email}`
+            const url = `https://agco-server.onrender.com/orders?email=${user.email}`
             console.log(url)
             fetch(url, {
                 method: "GET",
@@ -42,7 +43,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://agco-server.vercel.app/orders/${id}`
+            const url = `https://agco-server.onrender.com/orders/${id}`
             console.log(url)
             fetch(url, {
                 method: "DELETE",
@@ -54,7 +55,18 @@ const MyOrders = () => {
                     if (data.deletedCount) {
                         const remaining = products.filter(p => p._id !== id)
                         setProducts(remaining)
-                        toast("Your Order is Cancel")
+                        swal({
+                            title: "Successfully Deleted",
+                            text: "Your Order is deleted!",
+                            icon: "success",
+                        });
+                    }
+                    else {
+                        swal({
+                            title: "Access Forbidden!",
+                            text: "Your order has not been Deleted!",
+                            icon: "error",
+                        });
                     }
                 })
         }
@@ -86,7 +98,8 @@ const MyOrders = () => {
                             <td>{product.address}</td>
                             <td>{product.number}</td>
                             <td onClick={() => handleDelete(product._id)}> <RiDeleteBin6Fill size="20" /> </td>
-                            <td><FcPaid size="20" /></td>
+                            <td>{product.price}</td>
+                            {/* <FcPaid size="20" /> */}
                         </tr>)}
                     </tbody>
                 </table>

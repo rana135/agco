@@ -8,6 +8,8 @@ import {GrProductHunt} from "react-icons/gr"
 import {FaAddressCard} from "react-icons/fa"
 import {ImProfile} from "react-icons/im"
 import {BiAddToQueue} from "react-icons/bi"
+import {BsCartCheckFill} from "react-icons/bs"
+import {MdReviews} from "react-icons/md"
 
 const Dashboard = () => {
     const [user] = useAuthState(auth)
@@ -27,8 +29,8 @@ const Dashboard = () => {
                     {/* <!-- Sidebar content here --> */}
                     {/* <!-- Sidebar content here --> */}
                     <li>{!admin && <>
-                        <Link to='/dashboard'>My Orders</Link>
-                        <Link to="/dashboard/myReview">Add Review</Link>
+                        <Link to='/dashboard'><BsCartCheckFill />My Order</Link>
+                        <Link to="/dashboard/myReview"><MdReviews />Add Review</Link>
                     </>} </li>
                     <li>{admin && <>
                         <Link to="/dashboard/users"><FaHouseUser />All Users</Link>

@@ -13,7 +13,7 @@ const MyProfile = () => {
 
     const onSubmit = async data => {
         // console.log(data)
-        fetch(`https://agco-server.vercel.app/updateProfile/${email}`, {
+        fetch(`https://agco-server.onrender.com/updateProfile/${email}`, {
             method: "PUT",
             headers: {
                 'content-type': "application/json",

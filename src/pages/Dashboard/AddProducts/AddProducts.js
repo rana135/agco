@@ -11,7 +11,7 @@ const AddProducts = () => {
     console.log(user)
     const onSubmit = (data) => {
         console.log(data)
-        const url = `https://agco-server.vercel.app/products`
+        const url = `https://agco-server.onrender.com/products`
         fetch(url, {
             method: "POST",
             headers: {
@@ -29,7 +29,7 @@ const AddProducts = () => {
     };
 
     return (
-        <div>
+        <div className='bg-slate-100'>
             <h1 className='comment-title text-center font-bold text-primary text-2xl mt-2'>Please Add  Products</h1>
             <div className='addreview'>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -73,7 +73,7 @@ const AddProducts = () => {
 
 
                     <textarea
-                        className='mb-2 rounded-md h-36 lg:w-96 text-center bg-slate-100 w-full max-w-xs'
+                        className='input input-bordered mb-2 rounded-md h-36 lg:w-96 text-center bg-white w-full max-w-xs'
                         placeholder='Enter Product Details'
                         {...register("description",
                             {

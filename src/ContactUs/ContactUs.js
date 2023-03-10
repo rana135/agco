@@ -3,20 +3,19 @@ import "./ContactUs.css";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/contact.webp";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
 
 const ContactUs = () => {
     const navigate = useNavigate();
+    const [user] = useAuthState(auth);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (
-            e.target.name.value === "" ||
-            e.target.email.value === "" ||
-            e.target.message.value === ""
-        ) {
+        if (e.target.message.value === "") {
             swal({
-                title: "Please fill up all the fields",
+                title: "Please fill up Message fields",
                 text: "Your Input fields is Empty!",
                 icon: "error",
             });
@@ -98,8 +97,7 @@ const ContactUs = () => {
                                         </label>
                                         <input
                                             type="name"
-                                            name="name"
-                                            placeholder="Enter Your Name"
+                                            value={user?.displayName}
                                             className="input input-bordered input-success w-full"
                                         />
 
@@ -110,7 +108,7 @@ const ContactUs = () => {
                                         </label>
                                         <input
                                             type="email"
-                                            name="email"
+                                            value={user?.email}
                                             placeholder="Enter Your Email"
                                             className="input input-bordered input-success w-full "
                                         />
@@ -131,7 +129,7 @@ const ContactUs = () => {
                                         type="submit"
                                         value="Send"
                                     />
-                                    
+
                                 </form>
                             </div>
                         </div>

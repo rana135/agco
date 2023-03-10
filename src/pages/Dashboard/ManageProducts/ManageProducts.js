@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flip } from 'react-reveal';
+import { toast } from 'react-toastify';
 import Typed from 'react-typed';
 import useProducts from '../../../hook/useProducts';
 import './ManageProducts.css'
@@ -10,16 +11,23 @@ const ManageProducts = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://agco-server.vercel.app/products/${id}`
+            const url = `https://agco-server.onrender.com/products/${id}`
             fetch(url, {
                 method: "Delete"
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
-                    const remaining = product.filter(p => p._id !== id)
-                    setProduct(remaining)
+                    if (data.deletedCount) {
+                        const remaining = product.filter(p => p._id !== id)
+                        setProduct(remaining)
+                        // console.log(remaining);
+                        toast.success("Product Delete Successfully")
+                    }
+                    else {
+                        toast.error("Product Delete Failed")
+                    }
                 })
+
         }
     }
 

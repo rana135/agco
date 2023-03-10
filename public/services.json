@@ -1,6 +1,6 @@
 [
     {
-        "name": "Agricultural Baler",
+        "productName": "Agricultural Baler",
         "price": "589",
         "orderQuantity": "1250",
         "availableQuantity": "5000",
@@ -8,7 +8,7 @@
         "img": "https://i.ibb.co/1ZXbLSg/Agricultural-Baler.png"
     },
     {
-        "name": "Multicrop Thresher",
+        "productName": "Multicrop Thresher",
         "price": "550",
         "orderQuantity": "1300",
         "availableQuantity": "5500",
@@ -16,7 +16,7 @@
         "img": "https://i.ibb.co/7n1tZwy/Multicrop-Threshe.png"
     },
     {
-        "name": "Agricultural Farm Digger",
+        "productName": "Agricultural Farm Digger",
         "price": "790",
         "orderQuantity": "1000",
         "availableQuantity": "6000",
@@ -24,7 +24,7 @@
         "img": "https://i.ibb.co/KXhGcyg/Agricultural-Farm-Digger.png"
     },
     {
-        "name": "Land Leveler",
+        "productName": "Land Leveler",
         "price": "850",
         "orderQuantity": "1400",
         "availableQuantity": "4500",
@@ -32,7 +32,7 @@
         "img": "https://i.ibb.co/80Js36y/Land-Leveler.png"
     },
     {
-        "name": "Fertilizer Spreader",
+        "productName": "Fertilizer Spreader",
         "price": "450",
         "orderQuantity": "1500",
         "availableQuantity": "8500",
@@ -40,7 +40,7 @@
         "img": "https://i.ibb.co/qJGhNTH/Fertilizer-Spreader.png"
     },
     {
-        "name": "Mounted Disc Plough        ",
+        "productName": "Mounted Disc Plough        ",
         "price": "625",
         "orderQuantity": "800",
         "availableQuantity": "6800",

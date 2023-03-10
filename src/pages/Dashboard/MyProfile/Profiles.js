@@ -12,7 +12,7 @@ const Profiles = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            const url = `https://agco-server.vercel.app/profile?email=${user.email}`
+            const url = `https://agco-server.onrender.com/profile?email=${user.email}`
             console.log(url)
             fetch(url, {
                 method: "GET",

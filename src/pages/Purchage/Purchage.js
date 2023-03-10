@@ -3,13 +3,14 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import ReactImageMagnify from 'react-image-magnify';
-import { Flip } from 'react-reveal';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import usePurchage from '../../hook/usePurchage';
 import './Purchage.css'
 import SimilarProduct from './SimilarProduct';
+import { FaShoppingCart } from "react-icons/fa"
+import { BiChevronLeft } from "react-icons/bi";
+import swal from "sweetalert";
 
 const Purchage = () => {
     const { productsId } = useParams()
@@ -27,7 +28,7 @@ const Purchage = () => {
         // console.log(orderQuantity)
         // const update = { orderQuantity, QuantityDecrese }
         // const url = `
-        // https://agco-server.vercel.app/products/${productsId}`
+        // https://agco-server.onrender.com/products/${productsId}`
         // fetch(url, {
         //     method: "PUT",
         //     headers: {
@@ -42,13 +43,24 @@ const Purchage = () => {
         //     })
 
         //  Post Method
-        axios.post('https://agco-server.vercel.app/orders', data)
+        axios.post('https://agco-server.onrender.com/orders', data)
             .then(response => {
                 const data = response.data
                 console.log(data)
                 if (data.insertedId) {
-                    toast('Your order is booked');
+                    swal({
+                        title: "Successfully Booked",
+                        text: "Your Order is booked!",
+                        icon: "success",
+                    });
                     reset()
+                }
+                else {
+                    swal({
+                        title: "Access Forbidden!",
+                        text: "Your order has not been booked!",
+                        icon: "error",
+                    });
                 }
             })
     }
@@ -94,7 +106,7 @@ const Purchage = () => {
                                         <span class="text-lg leading-none align-baseline">Unit</span>
                                     </div>
                                     <div class="inline-block align-bottom">
-                                        <label htmlFor="my-modal-3" class="btn bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW</label>
+                                        <label htmlFor="my-modal-3" class="btn bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><FaShoppingCart class="-ml-2 mr-2" /> BUY NOW</label>
                                     </div>
                                 </div>
                             </div>
@@ -156,15 +168,22 @@ const Purchage = () => {
                         </span>
                         <br />
 
-                        <input defaultValue={product.orderQuantity}
+                        <input
                             className=' input input-bordered input-primary w-full '
-                            type="number" {...register("orderQuantity", { min: MinOQ, max: AvlOQ })}
+                            placeholder={product.orderQuantity}
+                            type="number" {...register("orderQuantity", {
+                                min: MinOQ,
+                                max: AvlOQ,
+                                required: {
+                                    value: true,
+                                    message: "Number is required"
+                                },
+                            })}
                         /> <br />
 
                         {errors.orderQuantity && (
-                            <span className='text-red-500'>
-                                minimum quantity
-                                Will not be less than and will <br />not be more than the available quantity.
+                            <span className='text-red-500 inline-flex'>
+                                minimum <BiChevronLeft className='mr-3' />  Quantity <BiChevronLeft className='ml-3' />available
                             </span>
                         )}
 
@@ -173,6 +192,7 @@ const Purchage = () => {
                             type="submit"
                             value="Order"
                         />
+
                     </form>
                 </div>
             </div>

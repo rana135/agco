@@ -9,6 +9,8 @@ import {RiArticleFill} from 'react-icons/ri';
 import {HiInformationCircle} from 'react-icons/hi';
 import {MdDashboardCustomize} from 'react-icons/md';
 import {MdContactPhone} from 'react-icons/md';
+import {FaSignInAlt} from 'react-icons/fa';
+import {FaSignOutAlt} from 'react-icons/fa';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -24,7 +26,7 @@ const Navbar = () => {
         <li><Link to='/about'>ABOUT<HiInformationCircle /></Link></li>
         <li><Link to='/dashboard'>DASHBOARD<MdDashboardCustomize /></Link></li>
         <li><Link to='/contact'>CONTACT<MdContactPhone /></Link></li>
-        <li>{user ? <button onClick={logout} className="btn btn-secondary">signout</button> : <Link to='/login'>LOGIN</Link>}</li>
+        <li>{user ? <button onClick={logout} className="btn btn-secondary">signout<FaSignOutAlt /></button> : <Link to='/login'>LOGIN <FaSignInAlt /></Link>}</li>
     </>
     return (
         <div className="navbar bg-gradient-to-r from-secondary to-primary lg:text-white">

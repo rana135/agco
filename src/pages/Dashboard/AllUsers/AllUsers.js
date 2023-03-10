@@ -9,7 +9,7 @@ const AllUsers = () => {
     const [user, loading] = useAuthState(auth);
     useEffect(() => {
         if (user) {
-            fetch('https://agco-server.vercel.app/user')
+            fetch('https://agco-server.onrender.com/user')
                 .then(res => res.json())
                 .then(data => setUsers(data))
         }

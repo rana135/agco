@@ -1,7 +1,27 @@
 import React from "react";
 import bg from "../../../assets/banner/3.png";
+import swal from "sweetalert";
 
 const SubscribeCard = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (e.target.email.value === "") {
+            swal({
+                title: "Please fill up Subscribe fields",
+                text: "Your Input fields is Empty!",
+                icon: "error",
+            });
+        }
+        else {
+            swal({
+                title: "Subscribe Sent Successfully!",
+                text: "We will get back to you as soon as Possiable!",
+                icon: "success",
+            });
+        }
+    };
     return (
         <div className="mt-24">
             <div
@@ -18,19 +38,21 @@ const SubscribeCard = () => {
                         <h2 className="card-title">Get Our Updates</h2>
                         <p>Find out about events and other news.</p>
                         <div className="card-actions justify-start">
-                            <div className="mt-3 flex flex-row flex-wrap">
+                            <form onSubmit={handleSubmit}
+                                className="mt-3 flex flex-row flex-wrap">
                                 <input
-                                    type="text"
+                                    type="email"
+                                    name="email"
                                     className=" text-gray-600 w-2/3 p-2 pl-5 outline-none rounded-l-lg"
                                     placeholder="rana@exmaple.com"
                                 />
                                 <button
                                     className=" p-2 w-1/3  bg-indigo-400  rounded-r-lg  text-white hover: hover:bg-indigo-300"
-                                    type="button"
+                                    type="submit"
                                 >
                                     Subscribe
                                 </button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

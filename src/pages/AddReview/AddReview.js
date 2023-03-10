@@ -14,7 +14,7 @@ const AddReview = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = (data, event) => {
         console.log(data)
-        const url = `https://agco-server.vercel.app/reviews`
+        const url = `https://agco-server.onrender.com/reviews`
         fetch(url, {
             method: "POST",
             headers: {
