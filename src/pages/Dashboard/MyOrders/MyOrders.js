@@ -15,7 +15,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            const url = `https://agco-server.onrender.com/orders?email=${user.email}`
+            const url = `http://localhost:5000/orders?email=${user.email}`
             console.log(url)
             fetch(url, {
                 method: "GET",
@@ -43,7 +43,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://agco-server.onrender.com/orders/${id}`
+            const url = `http://localhost:5000/orders/${id}`
             console.log(url)
             fetch(url, {
                 method: "DELETE",

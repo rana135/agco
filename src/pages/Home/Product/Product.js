@@ -6,7 +6,7 @@ import './Product.css'
 
 const Product = ({ service }) => {
     const navigate = useNavigate('')
-    const { img, name, description, availableQuantity, _id, orderQuantity, price } = service
+    const { img, productName, description, availableQuantity, _id, orderQuantity, price } = service
 
     const nevigateServiceDetail = id => {
         console.log(id)
@@ -20,7 +20,7 @@ const Product = ({ service }) => {
                 <div className='w-full h-56'>
                     <img src={img} alt="" />
                 </div>
-                <h2 className='font-bold text-xxl'>Name:{name}</h2>
+                <h2 className='font-bold text-xxl'>Name:{productName}</h2>
                 <h5><span className='font-bold text-xxl'>PPU</span> <span className='text-xs'>(Price Per Unit)</span> :${price}</h5>
                 <h5><span className='font-bold text-xxl'>Order Quantity:</span> : {orderQuantity}</h5>
                 <p><span className='font-bold text-xxl'>Available Quantity :</span> {availableQuantity}</p>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 const usePurchage = productsId => {
     const [product, setProduct] = useState([])
     useEffect(() => {
-        const url = (`https://agco-server.onrender.com/products/${productsId}`)
+        const url = (`http://localhost:5000/products/${productsId}`)
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))

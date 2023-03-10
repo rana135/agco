@@ -28,7 +28,7 @@ const Purchage = () => {
         // console.log(orderQuantity)
         // const update = { orderQuantity, QuantityDecrese }
         // const url = `
-        // https://agco-server.onrender.com/products/${productsId}`
+        // http://localhost:5000/products/${productsId}`
         // fetch(url, {
         //     method: "PUT",
         //     headers: {
@@ -43,7 +43,7 @@ const Purchage = () => {
         //     })
 
         //  Post Method
-        axios.post('https://agco-server.onrender.com/orders', data)
+        axios.post('http://localhost:5000/orders', data)
             .then(response => {
                 const data = response.data
                 console.log(data)
@@ -92,7 +92,7 @@ const Purchage = () => {
                             </div>
                             <div class="w-full md:w-1/2 px-10">
                                 <div class="mb-10">
-                                    <h1 class="font-bold uppercase text-2xl mb-5">Name : {product.name}</h1>
+                                    <h1 class="font-bold uppercase text-2xl mb-5">Name : {product.productName}</h1>
                                     <p class="text-sm">{product.description}
                                         <a href="/" alt="W3Schools" class="opacity-50 text-gray-900 hover:opacity-100 inline-block text-xs leading-none border-b border-gray-900"> MORE <i class="mdi mdi-arrow-right"></i></a></p>
                                     <h5><span className='font-bold'>Available Quantity : </span>{product.availableQuantity}</h5>
@@ -124,7 +124,7 @@ const Purchage = () => {
                     <form className='flex flex-col justify-center items-center leading-3' onSubmit={handleSubmit(onSubmit)}>
                         <input
                             className=' text-center rounded-md h-12 input input-bordered input-primary w-full'
-                            value={product.name}
+                            value={product.productName}
                             {...register("productName")}
                         /><br />
 

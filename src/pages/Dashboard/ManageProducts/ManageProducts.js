@@ -11,7 +11,7 @@ const ManageProducts = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://agco-server.onrender.com/products/${id}`
+            const url = `http://localhost:5000/products/${id}`
             fetch(url, {
                 method: "Delete"
             })
@@ -53,7 +53,7 @@ const ManageProducts = () => {
                         <div className='MngProducts shadow-sm p-2 rounded-3 border-2'>
 
                             <img src={p.img} alt="" />
-                            <h2 className='font-bold text-xxl'>Name:{p.name}</h2>
+                            <h2 className='font-bold text-xxl'>Name:{p.productName}</h2>
                             <h5><span className='font-bold text-xxl'>PPU</span> <span className='text-xs'>(Price Per Unit)</span> :${p.price}</h5>
                             <h5><span className='font-bold text-xxl'>Order Quantity:</span> : {p.orderQuantity}</h5>
                             <p><span className='font-bold text-xxl'>Available Quantity :</span> {p.availableQuantity}</p>
