@@ -14,7 +14,7 @@ const AddReview = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = (data, event) => {
         console.log(data)
-        const url = `http://localhost:5000/reviews`
+        const url = `https://agco-server.onrender.com/reviews`
         fetch(url, {
             method: "POST",
             headers: {

@@ -7,7 +7,7 @@ const useAdmin = user => {
         const email = user?.email;
         // console.log(email);
         if (email) {
-            fetch(`http://localhost:5000/admin/${email}`, {
+            fetch(`https://agco-server.onrender.com/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     "authorization": `Bearer ${localStorage.getItem("accessToken")}`
