@@ -8,7 +8,6 @@ import { BsLinkedin } from "react-icons/bs"
 const ProfileInfo = ({ profile }) => {
     const [user] = useAuthState(auth);
     const {Education,LinkedIn,location,phone} = profile;
-    console.log(Education);
     return (
         <div>
             <div class="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-xl mt-16">

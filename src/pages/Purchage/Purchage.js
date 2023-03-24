@@ -2,7 +2,6 @@ import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import ReactImageMagnify from 'react-image-magnify';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import usePurchage from '../../hook/usePurchage';
@@ -11,6 +10,7 @@ import SimilarProduct from './SimilarProduct';
 import { FaShoppingCart } from "react-icons/fa"
 import { BiChevronLeft } from "react-icons/bi";
 import swal from "sweetalert";
+import Magnifier from 'react-magnifier';
 
 const Purchage = () => {
     const { productsId } = useParams()
@@ -33,7 +33,7 @@ const Purchage = () => {
 
         }
         //  Post Method
-        axios.post('http://localhost:5000/orders', orders)
+        axios.post('https://agco-server.onrender.com/orders', orders)
             .then(response => {
                 if (orders) {
                     swal({
@@ -64,18 +64,7 @@ const Purchage = () => {
                         <div class="md:flex items-center -mx-20">
                             <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
                                 <div className='zoom-img relative'>
-                                    <ReactImageMagnify {...{
-                                        smallImage: {
-                                            alt: 'Wristwatch by Ted Baker London',
-                                            isFluidWidth: true,
-                                            src: product.img
-                                        },
-                                        largeImage: {
-                                            src: product.img,
-                                            width: 500,
-                                            height: 700
-                                        }
-                                    }} />
+                                    <Magnifier class="w-full sm:w-40" src={product.img} width={300} />
                                 </div>
                             </div>
                             <div class="w-full md:w-1/2 px-10">

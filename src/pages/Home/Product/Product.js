@@ -1,14 +1,13 @@
 import React from 'react';
 import { Flip } from 'react-reveal';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Product.css'
 import { BsFillCartPlusFill } from 'react-icons/bs'
-import { BiPlusCircle } from 'react-icons/bi';
-import { AiOutlineMinusCircle } from 'react-icons/ai';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 
 
 
-const Product = ({ service, handleAddToCart, item, remove }) => {
+const Product = ({ service, handleAddToCart, item }) => {
     const navigate = useNavigate('')
     const { img, productName, description, availableQuantity, _id, orderQuantity, price } = service
 
@@ -32,12 +31,10 @@ const Product = ({ service, handleAddToCart, item, remove }) => {
                 <div className='flex justify-between'>
                     <button onClick={() => nevigateServiceDetail(_id)} className='btn btn-dark admit-btn'>BOOK NOW</button>
                     {
-                        item ? <div class="flex justify-center items-center gap-1 btn-field">
-                            <span onClick={() => handleAddToCart(item)} type="button"><BiPlusCircle className='selected-btn' size="20" /></span>
-                            <span className="p-1">{item?.qty}</span>
-                            <span onClick={() => remove(item)} type="button"><AiOutlineMinusCircle className='selected-btn' size="20" /></span>
+                        item ? <div class="flex justify-center items-center gap-1 btn-field"><Link to='/shoppingCart'><BsFillArrowRightCircleFill className='hover:text-blue-500' size="25" />
+                        </Link>
                         </div> :
-                            <button onClick={() => handleAddToCart(service)} className=''><BsFillCartPlusFill size="25" /></button>
+                            <button onClick={() => handleAddToCart(service)} className=''><BsFillCartPlusFill className='hover:text-blue-500' size="25" /></button>
                     }
                 </div>
             </div>

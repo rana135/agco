@@ -2,18 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import Loading from '../../Shared/Loading';
 import ProfileInfo from './ProfileInfo';
 
 
 const Profiles = () => {
     const [profiles, setProfiles] = useState([])
-    const [user, loading] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            const url = `http://localhost:5000/profile?email=${user.email}`
-            console.log(url)
+            const url = `https://agco-server.onrender.com/profile?email=${user.email}`
             fetch(url, {
                 method: "GET",
                 headers: {
@@ -30,16 +28,13 @@ const Profiles = () => {
         }
     }, [user])
 
-    if (loading) {
-        return <Loading></Loading>
-    }
     return (
         <div>
-            {
+            {profiles?
                 profiles.map(profile => <ProfileInfo
                     key={profile._id}
                     profile={profile}
-                ></ProfileInfo>)
+                ></ProfileInfo>) : <p></p>
             }
         </div>
     );

@@ -33,7 +33,7 @@ const SubscribeCard = () => {
                     backgroundSize: "cover",
                 }}
             >
-                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                <div className="card lg:w-96 md:w-96 sm:w-96 w-80 bg-base-100 shadow-xl image-full">
                     <div className="card-body">
                         <h2 className="card-title">Get Our Updates</h2>
                         <p>Find out about events and other news.</p>

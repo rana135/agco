@@ -4,11 +4,13 @@ import Typed from 'react-typed';
 import './Products.css'
 import useProducts from '../../../hook/useProducts';
 import useCard from '../../../hook/useCard';
+import Loading from '../../Shared/Loading';
 
 
 const Products = () => {
     const [product] = useProducts();
-    const [cart, handleAddToCart, remove] = useCard();
+    const [cart, handleAddToCart] = useCard();
+
     return (
         <div>
             <div>
@@ -34,7 +36,6 @@ const Products = () => {
                                 service={service}
                                 item={cart.find((x) => x._id === service?._id)}
                                 handleAddToCart={handleAddToCart}
-                                remove={remove}
                             ></Product>)
                         }
                     </div>

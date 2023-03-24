@@ -13,7 +13,7 @@ const CheckoutForm = ({ buy }) => {
     const { _id, price, productName, email } = buy;
 
     useEffect(() => {
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://agco-server.onrender.com/create-payment-intent", {
             method: "POST",
             headers: {
                 'content-type': "application/json",
@@ -81,7 +81,7 @@ const CheckoutForm = ({ buy }) => {
                 transactionId: paymentIntent.id,
             }
             // updated
-            fetch(`http://localhost:5000/orders/${_id}`, {
+            fetch(`https://agco-server.onrender.com/orders/${_id}`, {
                 method: "PATCH",
                 headers: {
                     'content-type': "application/json",

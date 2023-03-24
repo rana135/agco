@@ -6,12 +6,12 @@ import useProducts from '../../../hook/useProducts';
 import './ManageProducts.css'
 
 const ManageProducts = () => {
-    const [product, setProduct] = useProducts()
+    const [product, setProduct] = useProducts();
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://agco-server.onrender.com/products/${id}`
             fetch(url, {
                 method: "Delete"
             })

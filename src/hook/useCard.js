@@ -28,6 +28,7 @@ const useCard = () => {
     }
     const removeAllFromCart = () => {
         setCart([]);
+        localStorage.setItem("cartItems", JSON.stringify([]));
     }
     const remove = (product) => {
         const exist = cart.find((x) => x._id === product?._id);

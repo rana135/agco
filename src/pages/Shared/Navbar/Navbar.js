@@ -28,17 +28,15 @@ const Navbar = () => {
         <li><Link to='/blogs'>BLOGS<RiArticleFill /></Link></li>
         <li><Link to='/about'>ABOUT<HiInformationCircle /></Link></li>
         <li><Link to='/dashboard'>DASHBOARD<MdDashboardCustomize /></Link></li>
-        <div class="flex justify-center items-center">
-            <div class="relative py-2">
-                <div class="top-1 absolute left-7">
-                    <p class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">{cart?.length}</p>
-                </div>
-                <li><Link to='/shoppingCart'><IoMdCart size="25" />
-                </Link></li>
+        <div class="relative py-2">
+            <div class="top-1 absolute left-7">
+                <p class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">{cart?.length}</p>
             </div>
+            <li><Link to='/shoppingCart'><IoMdCart size="25" />
+            </Link></li>
         </div>
         <li><Link to='/contact'>CONTACT<MdContactPhone /></Link></li>
-        <li>{user ? <button onClick={logout} className="btn btn-secondary">signout<FaSignOutAlt /></button> : <Link to='/login'>LOGIN <FaSignInAlt /></Link>}</li>
+        <li>{user ? <button onClick={logout} className="btn btn-secondary text-white">signout<FaSignOutAlt /></button> : <Link to='/login'>LOGIN <FaSignInAlt /></Link>}</li>
     </>
     return (
         <div className="navbar bg-gradient-to-r from-secondary to-primary lg:text-white">

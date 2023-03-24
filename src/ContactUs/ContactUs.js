@@ -125,7 +125,7 @@ const ContactUs = () => {
                                         ></textarea>
                                     </div>
                                     <input
-                                        className="btn btn-dark admit-btn mt-8 w-full  text-white"
+                                        className="btn btn-primary hover:btn-secondary mt-8 btn-block text-white hover:text-white"
                                         type="submit"
                                         value="Send"
                                     />

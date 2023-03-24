@@ -1,6 +1,8 @@
 import React from 'react';
 import useCard from '../../hook/useCard';
 import { AiFillDelete } from 'react-icons/ai'
+import smallImg from '../../assets/Agricultural-Farm-Digger.png'
+import Magnifier from "react-magnifier";
 
 const ShoppingCart = () => {
     const [cart, handleAddToCart, chooseOneFromCart, removeAllFromCart, remove, removeCart, isPending] = useCard();
@@ -8,6 +10,7 @@ const ShoppingCart = () => {
     const taxPrice = itemsPrice * 0.15;
     const shippingPrice = itemsPrice >= 4500 ? 0 : 20;
     const totalPrice = itemsPrice + taxPrice + shippingPrice;
+
     return isPending ? <p className='flex justify-center items-center'><button className="btn loading">loading</button></p> :
         (
             <div class="bg-gray-100 mt-5 pb-32">
@@ -19,7 +22,7 @@ const ShoppingCart = () => {
                             cart.map((product) => <div>
                                 <div class="rounded-lg md:w-11/12">
                                     <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start">
-                                        <img src={product.img} alt="" class="w-full rounded-lg sm:w-40" />
+                                        <Magnifier class="w-full sm:w-40" src={product.img} width={250} />
                                         <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                                             <div class="mt-5 sm:mt-0">
                                                 <h2 class="text-lg font-bold text-gray-900">{product.productName}</h2>
@@ -36,7 +39,7 @@ const ShoppingCart = () => {
                                                         class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
                                                 </div>
                                                 <div class="flex items-center space-x-4">
-                                                    <p class="text-sm">259.000 $</p>
+                                                    <p class="text-sm">{product.price}.000 $</p>
                                                     <AiFillDelete className='cursor-pointer hover:text-red-500' onClick={() => removeCart(product)} size="20" />
                                                 </div>
                                             </div>
