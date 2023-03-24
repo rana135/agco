@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading';
 import { RiDeleteBin6Fill } from "react-icons/ri"
@@ -10,12 +10,11 @@ import swal from "sweetalert";
 
 const MyOrders = () => {
     const [products, setProducts] = useState([])
-    console.log(products);
     const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            const url = `https://agco-server.onrender.com/orders?email=${user.email}`
+            const url = `http://localhost:5000/orders?email=${user.email}`
             console.log(url)
             fetch(url, {
                 method: "GET",
@@ -43,7 +42,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://agco-server.onrender.com/orders/${id}`
+            const url = `http://localhost:5000/orders/${id}`
             console.log(url)
             fetch(url, {
                 method: "DELETE",
@@ -87,19 +86,22 @@ const MyOrders = () => {
                             <th>Address</th>
                             <th>Number</th>
                             <th>Delete</th>
-                            <th>Paid</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
                         {products.map((product, index) => <tr>
                             <th>{index + 1}</th>
-                            <th>{product.name}</th>
+                            <th>{product.productName}</th>
                             <td>{product.orderQuantity}</td>
                             <td>{product.address}</td>
                             <td>{product.number}</td>
                             <td onClick={() => handleDelete(product._id)}> <RiDeleteBin6Fill size="20" /> </td>
-                            <td>{product.price}</td>
-                            {/* <FcPaid size="20" /> */}
+                            {/* <td>{product.price}</td> */}
+                            <td>
+                                {(product.price && !product.paid) && <Link to={`/dashboard/payment/${product._id}`}><button className='btn btn-xs btn-success text-white'>Pay</button></Link>}
+                                {(product.price && product.paid) && <FcPaid size="20" />}
+                            </td>
                         </tr>)}
                     </tbody>
                 </table>

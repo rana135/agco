@@ -1,49 +1,49 @@
 [
     {
         "productName": "Agricultural Baler",
-        "price": "589",
-        "orderQuantity": "1250",
-        "availableQuantity": "5000",
+        "price": 589,
+        "orderQuantity": 1250,
+        "availableQuantity": 5000,
         "description": " An agricultural baler is an agri tool or implement used to compress a cut and scrape crop into a compact or suitable size. A baler, when used as a tractor attachment, converts agricultural wastes such as hay and flax straws into bales that can then be used for a variety of purposes such as haylage and animal feed. When crop residue is in a baler, it is easier to transport and store it. It helps you save money, time, and space by reducing trash production by 80 percent. Furthermore, it reduces the risk of fires.",
         "img": "https://i.ibb.co/1ZXbLSg/Agricultural-Baler.png"
     },
     {
         "productName": "Multicrop Thresher",
-        "price": "550",
-        "orderQuantity": "1300",
-        "availableQuantity": "5500",
+        "price": 550,
+        "orderQuantity": 1300,
+        "availableQuantity": 5500,
         "description": "Our vast array of multicrop thresher – Hopper Tractor model is manufactured from premium quality raw material and is largely demanded in agricultural industry. Our range is suitable for threshing of wheat, soyabean, grams, peas, Maize , Millets , sorghum and oats. It is covered with safety terms as per Indian standard laid by B.I.S.Specifications:Suitable for the threshing of Wheat, Sorghum, Barley, Grams (Chick-Peas), Soybean, Millets, Oats, all type of Peas , Beans  and Pulses etc.",
         "img": "https://i.ibb.co/7n1tZwy/Multicrop-Threshe.png"
     },
     {
-        "productName": "Agricultural Farm Digger",
-        "price": "790",
-        "orderQuantity": "1000",
-        "availableQuantity": "6000",
+        "productName": "Farm Digger",
+        "price": 790,
+        "orderQuantity": 1000,
+        "availableQuantity": 6000,
         "description": "The efficient field preparation provided by the Farmking Post Hole Digger falls under the area of Seeding & Plantation. It has a category I&II hitch, a weight capacity of 300 kg, and enough horsepower to be installed on a tractor. According to a farmer's budget, the Farmking Post Hole Digger is affordable and something they can readily afford.",
         "img": "https://i.ibb.co/KXhGcyg/Agricultural-Farm-Digger.png"
     },
     {
         "productName": "Land Leveler",
-        "price": "850",
-        "orderQuantity": "1400",
-        "availableQuantity": "4500",
+        "price": 850,
+        "orderQuantity": 1400,
+        "availableQuantity": 4500,
         "description": "A land leveler is an agricultural machine used to level and prepare the ground for planting or other agricultural activities. It is also known as a land plane or a box scraper. The land leveler is typically towed behind a tractor and consists of a long, wide blade or scraper that is used to move and redistribute soil.",
         "img": "https://i.ibb.co/80Js36y/Land-Leveler.png"
     },
     {
         "productName": "Fertilizer Spreader",
-        "price": "450",
-        "orderQuantity": "1500",
-        "availableQuantity": "8500",
+        "price": 450,
+        "orderQuantity": 1500,
+        "availableQuantity": 8500,
         "description": "A fertilizer spreader is an agricultural machine used to evenly distribute fertilizers, seeds, lime, or other soil amendments onto a field or crop. Fertilizer spreaders can come in various sizes and configurations, ranging from small handheld models to large tractor-mounted spreaders.",
         "img": "https://i.ibb.co/qJGhNTH/Fertilizer-Spreader.png"
     },
     {
-        "productName": "Mounted Disc Plough        ",
-        "price": "625",
-        "orderQuantity": "800",
-        "availableQuantity": "6800",
+        "productName": "Mounted Disc Plough",
+        "price": 625,
+        "orderQuantity": 800,
+        "availableQuantity": 6800,
         "description": "Sickle blade assembly GW-34509 moves back and forth in front of the mower to cut thick grass and brush. The assembly may include multiple parts;",
         "img": "https://i.ibb.co/1bVF8Dt/Mounted-Disc-Plough.png"
     }

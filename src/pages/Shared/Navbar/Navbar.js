@@ -2,18 +2,21 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import titleLogo from '../../../assets/logo/AGCO-Logo.jpg'
+import titleLogo from '../../../assets/logo/agco.png'
 import auth from '../../../firebase.init';
-import {AiFillHome} from 'react-icons/ai';
-import {RiArticleFill} from 'react-icons/ri';
-import {HiInformationCircle} from 'react-icons/hi';
-import {MdDashboardCustomize} from 'react-icons/md';
-import {MdContactPhone} from 'react-icons/md';
-import {FaSignInAlt} from 'react-icons/fa';
-import {FaSignOutAlt} from 'react-icons/fa';
+import { AiFillHome } from 'react-icons/ai';
+import { RiArticleFill } from 'react-icons/ri';
+import { HiInformationCircle } from 'react-icons/hi';
+import { MdDashboardCustomize } from 'react-icons/md';
+import { MdContactPhone } from 'react-icons/md';
+import { FaSignInAlt } from 'react-icons/fa';
+import { FaSignOutAlt } from 'react-icons/fa';
+import { IoMdCart } from 'react-icons/io';
+import useCard from '../../../hook/useCard';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    const [cart] = useCard();
 
     const logout = () => {
         signOut(auth);
@@ -21,10 +24,19 @@ const Navbar = () => {
     };
 
     const menuItems = <>
-        <li className='lg:ml-48'><Link to='/'>HOME<AiFillHome /></Link></li>
+        <li className='lg:ml-36'><Link to='/'>HOME<AiFillHome /></Link></li>
         <li><Link to='/blogs'>BLOGS<RiArticleFill /></Link></li>
         <li><Link to='/about'>ABOUT<HiInformationCircle /></Link></li>
         <li><Link to='/dashboard'>DASHBOARD<MdDashboardCustomize /></Link></li>
+        <div class="flex justify-center items-center">
+            <div class="relative py-2">
+                <div class="top-1 absolute left-7">
+                    <p class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">{cart?.length}</p>
+                </div>
+                <li><Link to='/shoppingCart'><IoMdCart size="25" />
+                </Link></li>
+            </div>
+        </div>
         <li><Link to='/contact'>CONTACT<MdContactPhone /></Link></li>
         <li>{user ? <button onClick={logout} className="btn btn-secondary">signout<FaSignOutAlt /></button> : <Link to='/login'>LOGIN <FaSignInAlt /></Link>}</li>
     </>

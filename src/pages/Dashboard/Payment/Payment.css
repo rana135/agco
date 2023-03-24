@@ -1,0 +1,19 @@
+.paymentContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 0rem;
+}
+
+.paymentImg {
+    height: 100%;
+    width: 100%;
+    margin: 0% auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .paymentContainer {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 2rem 0rem;
+    }
+}

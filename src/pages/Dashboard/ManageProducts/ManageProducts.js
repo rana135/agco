@@ -11,7 +11,7 @@ const ManageProducts = () => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://agco-server.onrender.com/products/${id}`
+            const url = `http://localhost:5000/products/${id}`
             fetch(url, {
                 method: "Delete"
             })

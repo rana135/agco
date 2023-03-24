@@ -10,7 +10,7 @@ import summery from '../../../assets/banner/0.png'
 const BusinessSummary = () => {
     return (
         <div>
-            <section className="our-facts">
+            <section className="our-facts mt-16">
                 <div>
                     <h2 className='text-center'>A Few Facts About Our Company</h2>
                     <div className='flex justify-center bg-gray-50 py-5'>

@@ -22,31 +22,20 @@ const Purchage = () => {
     var MinOQ = product.orderQuantity
 
     const onSubmit = (data) => {
-        // console.log(data)
-        // const orderQuantity = parseFloat(data?.orderQuantity) + parseFloat(product?.orderQuantity);
-        // const QuantityDecrese = parseFloat(product?.orderQuantity) - parseFloat(data?.orderQuantity);
-        // console.log(orderQuantity)
-        // const update = { orderQuantity, QuantityDecrese }
-        // const url = `
-        // https://agco-server.onrender.com/products/${productsId}`
-        // fetch(url, {
-        //     method: "PUT",
-        //     headers: {
-        //         'content-type': "application/json"
-        //     },
-        //     body: JSON.stringify(update)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         console.log(result)
-        //         reset()
-        //     })
+        const orders = {
+            productName: product.productName,
+            name: data.name,
+            email: data.email,
+            address: data.address,
+            number: data.number,
+            orderQuantity: data.orderQuantity,
+            price: product.price
 
+        }
         //  Post Method
-        axios.post('https://agco-server.onrender.com/orders', data)
+        axios.post('http://localhost:5000/orders', orders)
             .then(response => {
-                const data = response.data
-                if (data.insertedId) {
+                if (orders) {
                     swal({
                         title: "Successfully Booked",
                         text: "Your Order is booked!",
@@ -67,7 +56,7 @@ const Purchage = () => {
 
     return (
         <div>
-            <div className='purchage-container p-2 text-center rounded-3' data-aos="fade-down"
+            <div className='purchage-container p-2  rounded-3' data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="1500">
                 <div class="min-w-screen min-h-screen bg-green-200 flex items-center p-5 lg:p-10 overflow-hidden relative">
@@ -122,20 +111,20 @@ const Purchage = () => {
                     <h3 className="text-lg font-bold">Orders Here</h3>
                     <form className='flex flex-col justify-center items-center leading-3' onSubmit={handleSubmit(onSubmit)}>
                         <input
-                            className=' text-center rounded-md h-12 input input-bordered input-primary w-full'
-                            value={product.productName}
+                            className='  rounded-md h-12 input input-bordered input-primary w-full'
+                            value={product?.productName}
                             {...register("productName")}
                         /><br />
 
                         <input
-                            className='text-center rounded-md h-12 input input-bordered input-primary w-full '
-                            value={user.displayName}
+                            className=' rounded-md h-12 input input-bordered input-primary w-full '
+                            value={user?.displayName}
                             {...register("name", { required: true, maxLength: 40 })}
                         /><br />
 
                         <input
-                            className=' text-center rounded-md h-12 input input-bordered input-primary w-full '
-                            value={user.email}
+                            className='  rounded-md h-12 input input-bordered input-primary w-full '
+                            value={user?.email}
                             {...register("email")}
                         /><br />
 
@@ -167,9 +156,12 @@ const Purchage = () => {
                         </span>
                         <br />
 
+
+
+
                         <input
                             className=' input input-bordered input-primary w-full '
-                            placeholder={product.orderQuantity}
+                            defaultValue={product.orderQuantity}
                             type="number" {...register("orderQuantity", {
                                 min: MinOQ,
                                 max: AvlOQ,
@@ -187,7 +179,7 @@ const Purchage = () => {
                         )}
 
                         <input
-                            className=' bg-slate-500 font-bold text-white text-center rounded-md h-12 input input-bordered input-primary w-full '
+                            className=' bg-slate-500 font-bold text-white  rounded-md h-12 input input-bordered input-primary w-full hover:bg-cyan-800'
                             type="submit"
                             value="Order"
                         />

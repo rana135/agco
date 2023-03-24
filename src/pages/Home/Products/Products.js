@@ -3,10 +3,12 @@ import Product from '../Product/Product';
 import Typed from 'react-typed';
 import './Products.css'
 import useProducts from '../../../hook/useProducts';
+import useCard from '../../../hook/useCard';
 
 
 const Products = () => {
-    const [product] = useProducts()
+    const [product] = useProducts();
+    const [cart, handleAddToCart, remove] = useCard();
     return (
         <div>
             <div>
@@ -21,7 +23,6 @@ const Products = () => {
                             loop
                         >
                         </Typed>
-
                     </h1>
                 </div>
 
@@ -31,6 +32,9 @@ const Products = () => {
                             product.slice(0, 6).map(service => <Product
                                 key={service._id}
                                 service={service}
+                                item={cart.find((x) => x._id === service?._id)}
+                                handleAddToCart={handleAddToCart}
+                                remove={remove}
                             ></Product>)
                         }
                     </div>

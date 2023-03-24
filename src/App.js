@@ -25,6 +25,14 @@ import AddProducts from './pages/Dashboard/AddProducts/AddProducts';
 import ContactUs from './ContactUs/ContactUs';
 import WhyUs from './pages/Home/WhyUs/WhyUs';
 import Profiles from './pages/Dashboard/MyProfile/Profiles';
+import Payment from './pages/Dashboard/Payment/Payment';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
+
 
 
 
@@ -40,6 +48,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/about" element={<WhyUs />} />
+        <Route path="/shoppingCart" element={<ShoppingCart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path='/purchage/:productsId' element={
@@ -58,6 +67,7 @@ function App() {
           </RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='myReview' element={<MyReview></MyReview>}></Route>
+          <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='users' element={
             <RequireAdmin>
               <AllUsers />

@@ -1,25 +1,96 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import titleLogo from '../../assets/logo/agco.png'
+import {BsFacebook} from 'react-icons/bs';
+import {BsInstagram} from 'react-icons/bs';
+import {FaTwitter} from 'react-icons/fa';
+import {BsGithub} from 'react-icons/bs';
+import {FaLinkedin} from 'react-icons/fa';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     return (
-        <footer class="footer footer-center p-10 bg-gradient-to-r from-secondary to-primary lg:text-white rounded">
-            <div class="grid grid-flow-col gap-4">
-                <Link to="/" class="link link-hover">About us</Link>
-                <Link to="/" class="link link-hover">Contact</Link>
-                <Link to="/" class="link link-hover">Terms of use</Link>
-                <Link to="/" class="link link-hover">Privacy policy</Link>
-            </div>
-            <div>
-                <div class="grid grid-flow-col gap-4">
-                    <Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></Link>
-                    <Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></Link>
-                    <Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></Link>
+        <footer class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
+            <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                    <div>
+                        <img src={titleLogo} class="mr-5 h-6 sm:h-9" alt="logo" />
+                        <p class="max-w-xs mt-4 text-sm text-gray-600">
+                        AGCO is a global leader in the design, manufacture and distribution of agricultural machinery and precision ag technology
+                        </p>
+                        <div class="flex mt-8 space-x-6 text-gray-600">
+                            <a class="hover:opacity-75" href='https://www.facebook.com/RanaHossainShimul' target="_blank" rel="noreferrer">
+                                <span class="sr-only"> Facebook </span>
+                                <BsFacebook className='text-xl'/>
+                            </a>
+                            <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
+                                <span class="sr-only"> Instagram </span>
+                                <BsInstagram className='text-xl'/>                               
+                            </a>
+                            <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
+                                <span class="sr-only"> Twitter </span>
+                                <FaTwitter className='text-xl'/>
+                            </a>
+                            <a class="hover:opacity-75" href='https://github.com/rana135' target="_blank" rel="noreferrer">
+                                <span class="sr-only"> GitHub </span>
+                                <BsGithub className='text-xl'/>
+                            </a>
+                            <a class="hover:opacity-75" href='https://www.linkedin.com/in/md-rana-hossain1/' target="_blank" rel="noreferrer">
+                                <span class="sr-only"> Linkedin </span>
+                                <FaLinkedin className='text-xl'/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+                        <div>
+                            <p class="font-medium">
+                                Company
+                            </p>
+                            <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                                <a class="hover:opacity-75" href> About </a>
+                                <a class="hover:opacity-75" href> Meet the Team </a>
+                                <a class="hover:opacity-75" href> History </a>
+                                <a class="hover:opacity-75" href> Careers </a>
+                            </nav>
+                        </div>
+                        <div>
+                            <p class="font-medium">
+                                Services
+                            </p>
+                            <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                                <a class="hover:opacity-75" href> 1on1 Coaching </a>
+                                <a class="hover:opacity-75" href> Company Review </a>
+                                <a class="hover:opacity-75" href> Accounts Review </a>
+                                <a class="hover:opacity-75" href> HR Consulting </a>
+                                <a class="hover:opacity-75" href> SEO Optimisation </a>
+                            </nav>
+                        </div>
+                        <div>
+                            <p class="font-medium">
+                                Helpful Links
+                            </p>
+                            <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                                <a class="hover:opacity-75" href> Contact </a>
+                                <a class="hover:opacity-75" href> FAQs </a>
+                                <a class="hover:opacity-75" href> Live Chat </a>
+                            </nav>
+                        </div>
+                        <div>
+                            <p class="font-medium">
+                                Legal
+                            </p>
+                            <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                                <a class="hover:opacity-75" href> Privacy Policy </a>
+                                <a class="hover:opacity-75" href> Terms &amp; Conditions </a>
+                                <a class="hover:opacity-75" href> Returns Policy </a>
+                                <a class="hover:opacity-75" href> Accessibility </a>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <p>Copyright © {currentYear}- All right reserved by AGCO Industries Ltd</p>
+                <p class="mt-8 text-xs text-gray-800">
+                    © {currentYear} Agco Manufacturer
+                </p>
             </div>
         </footer>
     );

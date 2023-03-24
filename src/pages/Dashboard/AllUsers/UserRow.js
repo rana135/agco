@@ -7,7 +7,7 @@ const UserRow = ({ userInfo, users, setUsers, index }) => {
     const { email, role, _id } = userInfo;
 
     const makeAdmin = () => {
-        fetch(`https://agco-server.onrender.com/user/admin/${email}`, {
+        fetch(`http://localhost:5000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 "authorization": `Bearer ${localStorage.getItem("accessToken")}`
@@ -32,7 +32,7 @@ const UserRow = ({ userInfo, users, setUsers, index }) => {
         const proceed = window.confirm('Are you sure ?')
 
         if (proceed) {
-            const url = `https://agco-server.onrender.com/deleteUser/${id}`
+            const url = `http://localhost:5000/deleteUser/${id}`
             console.log(url)
             fetch(url, {
                 method: "DELETE",

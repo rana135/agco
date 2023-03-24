@@ -13,7 +13,7 @@ const MyProfile = () => {
 
     const onSubmit = async data => {
         // console.log(data)
-        fetch(`https://agco-server.onrender.com/updateProfile/${email}`, {
+        fetch(`http://localhost:5000/updateProfile/${email}`, {
             method: "PUT",
             headers: {
                 'content-type': "application/json",
