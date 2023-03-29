@@ -1,10 +1,12 @@
 import { useEffect, useState, useTransition } from 'react';
+import { toast } from 'react-toastify';
 
 const useCard = () => {
     const [cart, setCart] = useState([])
     const handleAddToCart = (product) => {
         // const newCart = [...cart, product]
         // setCart(newCart);
+        toast.done("Product Added into Card");
         const exist = cart.find((x) => x._id === product._id);
         if (exist) {
             const newCart = cart.map((x) => x._id === product._id ?

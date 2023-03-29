@@ -1,10 +1,9 @@
 import React from 'react';
 import Product from '../Product/Product';
-import Typed from 'react-typed';
 import './Products.css'
 import useProducts from '../../../hook/useProducts';
 import useCard from '../../../hook/useCard';
-import Loading from '../../Shared/Loading';
+import { GoPrimitiveDot } from 'react-icons/go';
 
 
 const Products = () => {
@@ -14,18 +13,9 @@ const Products = () => {
     return (
         <div>
             <div>
-                <div className='services font-bold text-4xl'>
-                    <h1 className='mt-5 mb-5'>
-                        <Typed className='services-title'
-                            strings={[
-                                'Agriculture Equipment'
-                            ]}
-                            typeSpeed={40}
-                            backSpeed={55}
-                            loop
-                        >
-                        </Typed>
-                    </h1>
+                <div className='text-center mt-10'>
+                    <h2 className='services-title text-4xl text-bold font-extrabold'>Agriculture Equipment</h2>
+                    <div class="divider w-[200px] mx-auto"><GoPrimitiveDot className='text-2xl text-slate-400 inline-block' /><GoPrimitiveDot className='text-2xl inline-block relative right-4' /></div>
                 </div>
 
                 <div className='flex justify-center items-center'>

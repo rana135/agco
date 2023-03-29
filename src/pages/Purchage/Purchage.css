@@ -1,7 +1,6 @@
 .purchage-container img {
     height: 100%;
     width: 100%;
-
 }
 
 .zoom-description {
@@ -18,7 +17,6 @@
 .purchage-container {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-    display: flex;
     margin-bottom: 2rem;
 }
 
@@ -36,23 +34,4 @@
     border-radius: 10px;
     font-weight: 700;
     border: none;
-}
-/* --------------------------------------------
-        Responsive for mobile device
--------------------------------------------- */
-
-@media only screen and (max-width: 600px) {
-    .zoom-description h4 {
-        font-size: small;
-        margin: 0%;
-    }
-
-    .zoom-description p {
-        font-size: xx-small;
-        margin: 0%;
-    }
-
-    .zoom-description {
-        margin: 0%;
-    }
 }

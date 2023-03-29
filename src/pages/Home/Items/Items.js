@@ -24,7 +24,7 @@ const Items = () => {
     return (
         <div className='mt-24 w-[92%] mx-auto'>
             <div className='text-center'>
-                <h2 className='text-4xl text-bold font-extrabold'>Our Products</h2>
+                <h2 className='text-4xl text-bold font-extrabold services-title'>Our Products</h2>
                 <div class="divider w-[200px] mx-auto"><GoPrimitiveDot className='text-2xl text-slate-400 inline-block' /><GoPrimitiveDot className='text-2xl inline-block relative right-4' /></div>
             </div>
             <div className='flex items-center justify-center gap-4 md:gap-16'>
@@ -74,8 +74,6 @@ const Items = () => {
                             <SwiperSlide key={product._id}>
                                 <Item product={product} ></Item>
                             </SwiperSlide>
-
-
                         ) : ""
                     }
                     {

@@ -30,7 +30,6 @@ const Purchage = () => {
             number: data.number,
             orderQuantity: data.orderQuantity,
             price: product.price
-
         }
         //  Post Method
         axios.post('https://agco-server.onrender.com/orders', orders)
@@ -56,7 +55,7 @@ const Purchage = () => {
 
     return (
         <div>
-            <div className='purchage-container p-2  rounded-3' data-aos="fade-down"
+            <div className='purchage-container p-2 rounded-3' data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="1500">
                 <div class="min-w-screen min-h-screen bg-green-200 flex items-center p-5 lg:p-10 overflow-hidden relative">
@@ -64,7 +63,7 @@ const Purchage = () => {
                         <div class="md:flex items-center -mx-20">
                             <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
                                 <div className='zoom-img relative'>
-                                    <Magnifier class="w-full sm:w-40" src={product.img} width={300} />
+                                    <Magnifier src={product.img}  />
                                 </div>
                             </div>
                             <div class="w-full md:w-1/2 px-10">

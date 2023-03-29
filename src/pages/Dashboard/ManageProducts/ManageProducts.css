@@ -3,8 +3,6 @@
     align-items: center;
     margin-left: 40%;
     margin-top: 1rem;
-  
-    
   }
   
   .productsContainers img {
@@ -50,15 +48,16 @@
     .MngProducts-container{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-  
     }
   }
   
   @media only screen and (max-width: 576px) {
     .MngProducts-container{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-direction: column;
       width: 100%;
+      justify-content: center;
+      align-items: center;
     }
     .productsContainers {
       display: flex;

@@ -15,7 +15,6 @@ const MyOrders = () => {
     useEffect(() => {
         if (user) {
             const url = `https://agco-server.onrender.com/orders?email=${user.email}`
-            console.log(url)
             fetch(url, {
                 method: "GET",
                 headers: {

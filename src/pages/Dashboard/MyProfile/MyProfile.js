@@ -12,7 +12,7 @@ const MyProfile = () => {
     const email = user?.email;
 
     const onSubmit = async data => {
-        // console.log(data)
+        console.log(data)
         fetch(`https://agco-server.onrender.com/updateProfile/${email}`, {
             method: "PUT",
             headers: {
@@ -29,7 +29,7 @@ const MyProfile = () => {
             })
             .then(result => {
                 console.log(result);
-                if (result.modifiedCount) {
+                if (result) {
                     toast.success('Profile Update Sucessfully')
                     reset()
                 }
@@ -38,28 +38,24 @@ const MyProfile = () => {
 
     return (
         <div>
-            <div className='bg-slate-100'>
-                <div class="flex flex-col justify-center items-center w-full lg:flex-row">
-                    <form className='mb-10 overflow-x-hidden' onSubmit={handleSubmit(onSubmit)} >
+            <div className='container mx-auto p-4 bg-white'>
+                <div class="w-full md:w-1/2 lg:w-2/3 mx-auto my-3">
+                    <form className='flex flex-col mt-4' onSubmit={handleSubmit(onSubmit)} >
                         <h2 className="text-center font-bold">Update Your Profile</h2>
                         <div>
                             <label className="label">
-                                <span className="label-text lg:ml-20">Name</span>
+                                <span className="label-text">Name</span>
                             </label>
                             <input
                                 value={user.displayName}
                                 type="text"
                                 placeholder="Enter Your Name"
-                                className="
-                                
-                                input input-bordered input-primary max-w-xs lg:w-72 lg:ml-20"
-                                // {...register("firstName", { required: true })}
+                                className="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
                                 {...register("name", {
                                     required: {
                                         value: true,
                                         message: "Name is required"
                                     },
-
                                 })}
                             />
                             <label className="label">
@@ -69,12 +65,12 @@ const MyProfile = () => {
 
                         <div>
                             <label className="label">
-                                <span className="label-text lg:ml-20">Email</span>
+                                <span className="label-text">Email</span>
                             </label>
                             <input value={user.email}
                                 type="email"
                                 placeholder="Enter your e-mail"
-                                className="input input-bordered input-primary max-w-xs lg:w-72 lg:ml-20"
+                                className="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
                                 {...register("email", {
                                     pattern: {
                                         value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
@@ -89,32 +85,32 @@ const MyProfile = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text lg:ml-20">Location</span>
+                                <span className="label-text">Location</span>
                             </label>
                             <input
                                 type="text"
                                 placeholder="Enter your Location"
-                                className="input input-bordered input-primary max-w-xs lg:w-72 lg:ml-20"
+                                className="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
                                 {...register("location")}
                             />
                         </div>
 
                         <div>
                             <label className="label">
-                                <span className="label-text lg:ml-20">Education</span>
+                                <span className="label-text">Education</span>
                             </label>
                             <input
-                                className='mb-3  input input-bordered input-primary max-w-x  lg:w-72 lg:ml-20'
+                                className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                                 placeholder='Education'
                                 type="text"{...register("Education")}
                             /><br />
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text lg:ml-20">LinkedIn Link Here</span>
+                                <span className="label-text">LinkedIn Link Here</span>
                             </label>
                             <input
-                                className='mb-3  input input-bordered input-primary max-w-x  lg:w-72 lg:ml-20'
+                                className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                                 placeholder='LinkedIn Profile Link'
                                 type="text"{...register("LinkedIn")}
                             /><br />
@@ -122,12 +118,12 @@ const MyProfile = () => {
 
                         <div>
                             <label className="label">
-                                <span className="label-text lg:ml-20">Phone</span>
+                                <span className="label-text">Phone</span>
                             </label>
                             <input
                                 type="phone"
                                 placeholder="Enter your phone"
-                                className='mb-3  input input-bordered input-primary max-w-x  lg:w-72 lg:ml-20'
+                                className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                                 // {...register("firstName", { required: true })}
                                 {...register("phone", {
 
@@ -143,7 +139,7 @@ const MyProfile = () => {
                             </label>
                         </div>
 
-                        <input type="submit" className='form-button lg:ml-36 form-button ml-3' value="Save Change" />
+                        <input type="submit" className='form-button mt-4 px-4 py-3  leading-6 text-base rounded-md border border-transparent  focus:outline-none text-blue-100 hover:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer inline-flex items-center w-full justify-center font-medium' value="Save Change" />
                     </form>
                 </div>
             </div>

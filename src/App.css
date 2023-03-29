@@ -8,6 +8,12 @@
 .App {
   text-align: center;
 }
+.spinnerContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  text-align: center;
+}
 
 .App-logo {
   height: 40vmin;

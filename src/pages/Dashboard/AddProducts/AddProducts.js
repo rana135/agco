@@ -8,7 +8,7 @@ import auth from '../../../firebase.init';
 const AddProducts = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [user] = useAuthState(auth);
-    console.log(user)
+
     const onSubmit = (data) => {
         console.log(data)
         const url = `https://agco-server.onrender.com/products`
@@ -23,57 +23,56 @@ const AddProducts = () => {
             .then(result => {
                 toast.success('Item added Sucessfully')
                 reset()
-
             }
             )
     };
 
     return (
-        <div className='bg-slate-100'>
+        <div className='container mx-auto p-4 bg-white'>
             <h1 className='comment-title text-center font-bold text-primary text-2xl mt-2'>Please Add  Products</h1>
-            <div className='addreview'>
-                <form onSubmit={handleSubmit(onSubmit)}>
+            <div className='w-full md:w-1/2 lg:w-2/3 mx-auto my-5'>
+                <form className='flex flex-col mt-4' onSubmit={handleSubmit(onSubmit)}>
                     <input
-                        className='mb-3  input input-bordered input-primary w-full max-w-xs '
+                        className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                         value={user.displayName}
                         {...register("adminName", { required: true, maxLength: 25 })}
                     /> <br />
                     <input
-                        className='mb-3  input input-bordered input-primary w-full max-w-xs '
+                        className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                         value={user.email}
                         {...register("email")}
                     /> <br />
 
                     <input
-                        className='mb-3 input input-bordered input-primary w-full max-w-xs'
+                        className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                         placeholder='Enter Product Name'
                         type="text" {...register("name")}
                     /><br />
                     <input
-                        className='mb-3 input input-bordered input-primary w-full max-w-xs'
+                        className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                         placeholder='Enter Price Per Unit'
                         type="number" {...register("price")}
                     /><br />
                     <input
-                        className='mb-3 input input-bordered input-primary w-full max-w-xs'
+                        className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                         placeholder='Enter Minimum Order Quantity'
                         type="number" {...register("orderQuantity")}
                     /><br />
                     <input
-                        className='mb-3 input input-bordered input-primary w-full max-w-xs'
+                        className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                         placeholder='Enter Available Order Quantity'
                         type="number" {...register("availableQuantity")}
                     /><br />
 
                     <input
-                        className='mb-3  input input-bordered input-primary w-full max-w-x'
+                        className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                         placeholder='Enter Img url'
                         type="text"{...register("img")}
                     /><br />
 
 
                     <textarea
-                        className='input input-bordered mb-2 rounded-md h-36 lg:w-96 text-center bg-white w-full max-w-xs'
+                        className='px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm'
                         placeholder='Enter Product Details'
                         {...register("description",
                             {
@@ -88,7 +87,7 @@ const AddProducts = () => {
                     </label>
 
                     <input
-                        className='mb-2 bg-slate-500 font-bold text-white text-center rounded-md h-12 input input-bordered input-primary w-full max-w-xs '
+                        className='form-button px-4 py-3 leading-6 text-base rounded-md border border-transparent  focus:outline-none text-blue-100 hover:text-white focus:ring-2 hover:bg-sky-600 focus:ring-offset-2 cursor-pointer inline-flex items-center w-full justify-center font-medium'
                         type="submit"
                         value="Add Product"
                     />

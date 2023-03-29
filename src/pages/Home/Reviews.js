@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import quote from '../../assets/images/quote.svg';
 import Review from './Review';
+import Slider from "react-slick";
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -9,6 +10,12 @@ const Reviews = () => {
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
+    const settings = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    };
     return (
         <section className='mt-24 m-3 bg-gray-50'>
             <div className='flex justify-between'>
@@ -20,13 +27,15 @@ const Reviews = () => {
                     <img className='w-24 lg:w-18' src={quote} alt="" />
                 </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                {
-                    reviews.map(review => <Review
-                        key={review._id}
-                        review={review}
-                    ></Review>)
-                }
+            <div>
+                <Slider {...settings}>
+                    {
+                        reviews.map(review => <Review
+                            key={review._id}
+                            review={review}
+                        ></Review>)
+                    }
+                </Slider>
             </div>
         </section>
     );
