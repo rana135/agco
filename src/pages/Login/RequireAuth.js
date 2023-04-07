@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuthState, useSendEmailVerification} from 'react-firebase-hooks/auth';
+import { useAuthState, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
@@ -35,3 +35,4 @@ const RequireAuth = ({ children }) => {
 };
 
 export default RequireAuth;
+

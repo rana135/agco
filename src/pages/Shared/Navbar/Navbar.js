@@ -3,7 +3,6 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import titleLogo from '../../../assets/logo/agco.png'
-import auth from '../../../firebase.init';
 import { AiFillHome } from 'react-icons/ai';
 import { RiArticleFill } from 'react-icons/ri';
 import { HiInformationCircle } from 'react-icons/hi';
@@ -13,6 +12,7 @@ import { FaSignInAlt } from 'react-icons/fa';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { IoMdCart } from 'react-icons/io';
 import useCard from '../../../hook/useCard';
+import auth from '../../../firebase.init';
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
@@ -20,7 +20,6 @@ const Navbar = () => {
 
     const logout = () => {
         signOut(auth);
-        localStorage.removeItem("accessToken");
     };
 
     const menuItems = <>
