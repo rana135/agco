@@ -63,7 +63,7 @@ const Purchage = () => {
                         <div class="md:flex items-center -mx-20">
                             <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
                                 <div className='zoom-img relative'>
-                                    <Magnifier src={product.img}  />
+                                    <Magnifier src={product.img} />
                                 </div>
                             </div>
                             <div class="w-full md:w-1/2 px-10">

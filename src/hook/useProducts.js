@@ -10,7 +10,7 @@ const useProducts = () => {
                 setProduct(data)
             })
     }, [])
-    
+
     return [product, setProduct]
 };
 

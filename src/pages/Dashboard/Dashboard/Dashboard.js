@@ -26,7 +26,8 @@ const Dashboard = () => {
             <div class="drawer-side bg-slate-200 lg:w-5/6">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-60 bg-blue-100 text-base-content">
-                    {/* <!-- Sidebar content here --> */}
+                    {/* <!-- 
+                     content here --> */}
                     <li>{!admin && <>
                         <Link to='/dashboard'><BsCartCheckFill />My Order</Link>
                         <Link to="/dashboard/myReview"><MdReviews />Add Review</Link>

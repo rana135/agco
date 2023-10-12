@@ -12,6 +12,7 @@ const stripePromise = loadStripe('pk_test_51MlI9pAP2f3pNlGaofGvvj1eu7sSgRfze6CNA
 
 const Payment = () => {
     const { id } = useParams();
+
     const url = `https://agco-server.onrender.com/order/${id}`
     const { data: buy, isLoading, error } = useQuery(["order", id], () => fetch(url, {
         method: "GET",
@@ -26,6 +27,7 @@ const Payment = () => {
     if (error) {
         return 'An error has occurred: ' + error.message;
     }
+
     return (
         <div className='paymentContainer'>
             <div data-aos="fade-right"

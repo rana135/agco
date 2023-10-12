@@ -11,6 +11,7 @@ const CheckoutForm = ({ buy }) => {
     const [processing, setProcessing] = useState(false);
 
     const { _id, price, productName, email } = buy;
+    console.log({ buy });
 
     useEffect(() => {
         fetch("https://agco-server.onrender.com/create-payment-intent", {
